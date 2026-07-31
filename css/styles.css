@@ -110,3 +110,19 @@ body.cinematic-home:not(.intro-complete) .site-nav{display:none}
 
 @media(max-width:900px){.shell{width:min(100% - 28px,1120px)}.site-menu{gap:14px}.site-menu a{font-size:.68rem}.landing-sequence{min-height:580px}.intro-title{top:54%}.intro-title h1{font-size:clamp(3.4rem,13vw,5.8rem)}.intro-title h2{font-size:clamp(1.8rem,7vw,3rem)}.home-after-copy{text-align:center;margin:auto}.home-after-copy .button-row{justify-content:center}}
 @media(max-width:700px){.sound-gate-card{padding:30px 22px}.intro-garden{background-position:center}.intro-title{width:92vw}.home-after-intro{min-height:620px}.section{padding:68px 0}}
+
+/* v4: Keep the cinematic intro locked to the visible browser viewport. */
+body.cinematic-home:not(.intro-complete){overflow:hidden;overscroll-behavior:none}
+body.cinematic-home:not(.intro-complete) .landing-sequence{
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100vh;
+  height:100dvh;
+  min-height:0;
+  z-index:400;
+  margin:0;
+}
+body.cinematic-home:not(.intro-complete) .sound-gate{position:fixed;inset:0;z-index:500}
+.landing-sequence.sequence-done{display:none!important}
+@media(max-width:900px){body.cinematic-home:not(.intro-complete) .landing-sequence{min-height:0}}

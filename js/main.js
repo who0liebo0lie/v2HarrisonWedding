@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded",()=>{
 document.addEventListener("DOMContentLoaded",()=>{
   const body=document.body;
   const intro=document.querySelector(".landing-sequence");
+  if ("scrollRestoration" in history) history.scrollRestoration="manual";
+  window.scrollTo(0,0);
   if(!intro)return;
   const gate=document.querySelector("[data-sound-gate]");
   const audio=document.querySelector("[data-intro-audio]");
@@ -25,9 +27,11 @@ document.addEventListener("DOMContentLoaded",()=>{
     intro.classList.add("sequence-done");
     body.classList.add("intro-complete");
     body.style.overflow="";
+    window.scrollTo(0,0);
     if(audio){audio.pause();audio.currentTime=0;}
   };
   const start=(withSound)=>{
+    window.scrollTo(0,0);
     gate?.classList.add("is-dismissed");
     intro.classList.remove("is-paused");
     if(withSound&&audio){audio.volume=.68;audio.play().catch(()=>{});}
