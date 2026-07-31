@@ -46,3 +46,17 @@ document.addEventListener("DOMContentLoaded",()=>{
     window.setTimeout(finish,350);
   });
 });
+
+document.addEventListener("DOMContentLoaded",()=>{
+  const body=document.body;
+  const intro=document.querySelector('.v7-intro');
+  if(!intro)return;
+  const gate=document.querySelector('[data-sound-gate]');
+  const audio=document.querySelector('[data-intro-audio]');
+  let timer;
+  const finish=()=>{intro.classList.add('sequence-done');body.classList.add('intro-complete');body.style.overflow='';window.scrollTo(0,0);if(audio){audio.pause();audio.currentTime=0;}};
+  const start=(sound)=>{window.scrollTo(0,0);gate?.classList.add('is-dismissed');intro.classList.remove('is-paused');if(sound&&audio){audio.volume=.55;audio.play().catch(()=>{});}timer=setTimeout(finish,22200);};
+  document.querySelector('[data-start-sound]')?.addEventListener('click',()=>start(true),{once:true});
+  document.querySelector('[data-start-silent]')?.addEventListener('click',()=>start(false),{once:true});
+  document.querySelector('[data-skip-intro]')?.addEventListener('click',()=>{clearTimeout(timer);finish();});
+});

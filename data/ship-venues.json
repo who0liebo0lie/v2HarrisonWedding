@@ -1,9 +1,162 @@
 [
-{"name":"Central Park","image":"assets/images/neighborhood-central-park.jpg","description":"A lush open-air neighborhood filled with gardens, dining, cocktails, and live music.","categories":["Dining","Drinks","Evenings","Explore"],"venues":[{"name":"150 Central Park","description":"Upscale specialty dining in an intimate setting.","type":"Specialty dining","deck":"Deck 8"},{"name":"Jamie’s Italian","description":"Rustic Italian favorites and relaxed dining.","type":"Specialty dining","deck":"Deck 8"},{"name":"Chops Grille","description":"Classic steakhouse favorites.","type":"Specialty dining","deck":"Deck 8"}]},
-{"name":"Pool Deck","image":"assets/images/neighborhood-pool-deck.jpg","description":"Pools, whirlpools, sunshine, and easy access to outdoor fun.","categories":["Relaxation","Drinks","Explore"],"venues":[{"name":"Main Pools","description":"Open-air pools and loungers.","type":"Included"},{"name":"The Lime & Coconut","description":"Poolside drinks and live energy.","type":"Bar"}]},
-{"name":"Entertainment Place","image":"assets/images/neighborhood-entertainment.jpg","description":"The heart of nighttime entertainment, from large productions to comedy and ice shows.","categories":["Entertainment","Evenings"],"venues":[{"name":"Royal Theater","description":"Large-scale stage productions.","type":"Entertainment"},{"name":"Studio B","description":"Ice skating shows and activities.","type":"Entertainment"}]},
-{"name":"Boardwalk","image":"assets/images/neighborhood-boardwalk.jpg","description":"A playful open-air neighborhood with dining, rides, and the AquaTheater.","categories":["Dining","Entertainment","Explore"],"venues":[{"name":"AquaTheater","description":"High-diving and acrobatic performances.","type":"Entertainment"},{"name":"Boardwalk Dog House","description":"Casual included bites.","type":"Included dining"}]},
-{"name":"Royal Promenade","image":"assets/images/neighborhood-promenade.jpg","description":"A lively indoor boulevard for cafés, shopping, music, and people-watching.","categories":["Dining","Drinks","Explore","Evenings"],"venues":[{"name":"Café Promenade","description":"Coffee, snacks, and a convenient meeting point.","type":"Included dining"},{"name":"Schooner Bar","description":"Classic cocktails and piano music.","type":"Bar"}]},
-{"name":"Youth Zone","image":"assets/images/neighborhood-youth-zone.jpg","description":"Family-friendly spaces, activities, games, and places for younger guests to make the ship their own.","categories":["Entertainment","Explore"],"venues":[{"name":"Adventure Ocean","description":"Age-based youth activities and supervised programs.","type":"Included"},{"name":"Arcade","description":"Games and casual family fun.","type":"Extra cost"}]},
-{"name":"Vitality Spa","image":"assets/images/neighborhood-vitality-spa.jpg","description":"Spa treatments, fitness, and quiet time away from the crowds.","categories":["Relaxation"],"venues":[{"name":"Vitality Spa","description":"Treatments and salon services.","type":"Extra cost"},{"name":"Fitness Center","description":"Workout space with ocean views.","type":"Included"}]}
+  {
+    "name": "Central Park",
+    "image": "assets/images/neighborhood-central-park.jpg",
+    "description": "A lush open-air neighborhood filled with gardens, dining, cocktails, and live music.",
+    "categories": [
+      "Dining",
+      "Drinks",
+      "Evenings",
+      "Explore"
+    ],
+    "venues": [
+      {
+        "name": "150 Central Park",
+        "description": "Upscale specialty dining in an intimate setting.",
+        "type": "Specialty dining",
+        "deck": "Deck 8"
+      },
+      {
+        "name": "Jamie\u2019s Italian",
+        "description": "Rustic Italian favorites and relaxed dining.",
+        "type": "Specialty dining",
+        "deck": "Deck 8"
+      },
+      {
+        "name": "Chops Grille",
+        "description": "Classic steakhouse favorites.",
+        "type": "Specialty dining",
+        "deck": "Deck 8"
+      }
+    ]
+  },
+  {
+    "name": "Pool Deck",
+    "image": "assets/images/neighborhood-pool-deck.jpg",
+    "description": "Pools, whirlpools, sunshine, and easy access to outdoor fun.",
+    "categories": [
+      "Relaxation",
+      "Drinks",
+      "Explore"
+    ],
+    "venues": [
+      {
+        "name": "Main Pools",
+        "description": "Open-air pools and loungers.",
+        "type": "Included"
+      },
+      {
+        "name": "The Lime & Coconut",
+        "description": "Poolside drinks and live energy.",
+        "type": "Bar"
+      }
+    ]
+  },
+  {
+    "name": "Entertainment Place",
+    "image": "assets/images/experience-entertainment.jpg",
+    "description": "The heart of nighttime entertainment, from large productions to comedy and ice shows.",
+    "categories": [
+      "Entertainment",
+      "Evenings"
+    ],
+    "venues": [
+      {
+        "name": "Royal Theater",
+        "description": "Large-scale stage productions.",
+        "type": "Entertainment"
+      },
+      {
+        "name": "Studio B",
+        "description": "Ice skating shows and activities.",
+        "type": "Entertainment"
+      }
+    ]
+  },
+  {
+    "name": "Boardwalk",
+    "image": "assets/images/explore-ship-wide.jpg",
+    "description": "A playful open-air neighborhood with dining, rides, and the AquaTheater.",
+    "categories": [
+      "Dining",
+      "Entertainment",
+      "Explore"
+    ],
+    "venues": [
+      {
+        "name": "AquaTheater",
+        "description": "High-diving and acrobatic performances.",
+        "type": "Entertainment"
+      },
+      {
+        "name": "Boardwalk Dog House",
+        "description": "Casual included bites.",
+        "type": "Included dining"
+      }
+    ]
+  },
+  {
+    "name": "Royal Promenade",
+    "image": "assets/images/experience-explore.jpg",
+    "description": "A lively indoor boulevard for caf\u00e9s, shopping, music, and people-watching.",
+    "categories": [
+      "Dining",
+      "Drinks",
+      "Explore",
+      "Evenings"
+    ],
+    "venues": [
+      {
+        "name": "Caf\u00e9 Promenade",
+        "description": "Coffee, snacks, and a convenient meeting point.",
+        "type": "Included dining"
+      },
+      {
+        "name": "Schooner Bar",
+        "description": "Classic cocktails and piano music.",
+        "type": "Bar"
+      }
+    ]
+  },
+  {
+    "name": "Youth Zone",
+    "image": "assets/images/adventure-at-sea.jpg",
+    "description": "Family-friendly spaces, activities, games, and places for younger guests to make the ship their own.",
+    "categories": [
+      "Entertainment",
+      "Explore"
+    ],
+    "venues": [
+      {
+        "name": "Adventure Ocean",
+        "description": "Age-based youth activities and supervised programs.",
+        "type": "Included"
+      },
+      {
+        "name": "Arcade",
+        "description": "Games and casual family fun.",
+        "type": "Extra cost"
+      }
+    ]
+  },
+  {
+    "name": "Vitality Spa",
+    "image": "assets/images/neighborhood-youth-zone.jpg",
+    "description": "Spa treatments, fitness, and quiet time away from the crowds.",
+    "categories": [
+      "Relaxation"
+    ],
+    "venues": [
+      {
+        "name": "Vitality Spa",
+        "description": "Treatments and salon services.",
+        "type": "Extra cost"
+      },
+      {
+        "name": "Fitness Center",
+        "description": "Workout space with ocean views.",
+        "type": "Included"
+      }
+    ]
+  }
 ]
