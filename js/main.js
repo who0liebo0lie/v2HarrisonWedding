@@ -13,3 +13,21 @@ document.addEventListener("DOMContentLoaded",()=>{
   const sky=document.querySelector(".cinematic-sky");
   if(sky){window.addEventListener("scroll",()=>{const y=Math.min(window.scrollY,700);sky.style.transform=`scale(1.01) translateY(${y*.09}px)`;},{passive:true});}
 });
+
+// Cinematic intro controller
+document.addEventListener("DOMContentLoaded",()=>{
+  const body=document.body;
+  const intro=document.querySelector(".landing-sequence");
+  if(!intro)return;
+  const finish=()=>{
+    intro.classList.add("sequence-done");
+    body.classList.add("intro-complete");
+    body.style.overflow="";
+  };
+  const timer=window.setTimeout(finish,12200);
+  document.querySelector("[data-skip-intro]")?.addEventListener("click",()=>{
+    window.clearTimeout(timer);
+    intro.classList.add("is-skipped");
+    window.setTimeout(finish,350);
+  });
+});
