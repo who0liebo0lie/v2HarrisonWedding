@@ -56,3 +56,57 @@ body.cinematic-home:not(.intro-complete){overflow:hidden}.landing-sequence.is-sk
 @keyframes particleCatch{0%,100%{opacity:0;transform:translate(0,18px) scale(.5)}34%{opacity:.9}70%{opacity:.15;transform:translate(22px,-42px) scale(1.35)}}
 @media(max-width:700px){.landing-sequence{min-height:600px}.intro-garden{background-position:58% 42%}.intro-title{top:54%}.intro-title h1{font-size:4.4rem}.intro-title h2{font-size:2.5rem}.intro-ship{clip-path:polygon(28% 20%,100% 18%,100% 100%,25% 100%)}.intro-skip{right:14px;bottom:14px}.home-after-intro{min-height:640px}.home-after-copy{text-align:center}.home-after-copy .button-row{justify-content:center}}
 @media(prefers-reduced-motion:reduce){.landing-sequence{display:none}body.cinematic-home{overflow:auto}body.cinematic-home .site-nav{opacity:1;transform:none;pointer-events:auto}}
+
+/* Cinematic v3 — corrected scale, pacing, and audio entry */
+html{font-size:16px}
+body{overflow-x:hidden}
+.shell{width:min(1120px,calc(100% - 40px))}
+.site-nav{height:auto}
+.nav-inner{min-height:68px}
+.site-menu{gap:22px}
+.site-menu a{font-size:.72rem;padding:24px 0 18px}
+
+.sound-gate{position:fixed;inset:0;z-index:500;display:grid;place-items:center;padding:24px;background:linear-gradient(180deg,rgba(5,24,38,.76),rgba(5,24,38,.9)),url('../assets/images/garden-cinematic.jpg') center/cover no-repeat;color:#fff;transition:opacity 1.2s ease,visibility 1.2s ease}
+.sound-gate.is-dismissed{opacity:0;visibility:hidden;pointer-events:none}
+.sound-gate-card{width:min(560px,92vw);padding:42px;text-align:center;border:1px solid rgba(255,255,255,.32);border-radius:28px;background:rgba(7,31,45,.55);backdrop-filter:blur(14px);box-shadow:0 30px 90px rgba(0,0,0,.35)}
+.sound-gate-card .script{font-size:2.6rem;color:#ffd27f;margin:0}
+.sound-gate-card h1{font:600 clamp(2.8rem,7vw,5rem)/.95 "Cormorant Garamond",serif;margin:.1em 0 .25em}
+.sound-gate-card p:not(.script){margin:0 auto 24px;max-width:420px}
+.sound-gate-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.sound-gate .button.ghost{color:#fff;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.55)}
+
+body.cinematic-home:not(.intro-complete) .site-nav{display:none}
+.landing-sequence{height:100vh;height:100svh;min-height:640px;max-height:none}
+.landing-sequence.is-paused *{animation-play-state:paused!important}
+.intro-garden{background-image:linear-gradient(90deg,rgba(4,20,22,.15),rgba(4,20,22,.04)),url('../assets/images/garden-cinematic.jpg');background-position:center;background-size:cover;animation-duration:21s}
+.intro-glow{animation-duration:21s}
+.intro-ocean{background-image:linear-gradient(180deg,rgba(8,30,48,.08),rgba(236,117,139,.1) 44%,rgba(255,194,126,.1) 67%,rgba(7,28,43,.36)),url('../assets/images/ship-sunrise-clean.jpg');background-position:center;background-size:cover;animation-duration:21s}
+.intro-horizon{animation-duration:21s}
+.intro-ship{background-image:url('../assets/images/ship-sunrise-clean.jpg');background-position:center;background-size:cover;clip-path:inset(0);animation-duration:21s}
+.intro-title{top:52%;width:min(880px,88vw);animation-duration:21s}
+.intro-title .script{font-size:clamp(1.8rem,3vw,3.2rem)}
+.intro-title h1{font-size:clamp(3.7rem,8vw,7.6rem);line-height:.85}
+.intro-title h2{font-size:clamp(2rem,4vw,4rem);margin:18px 0}
+.intro-title>p:last-child{font-size:clamp(.72rem,1vw,1rem)}
+.intro-particles i{animation-duration:7.5s}
+.home-after-intro{min-height:680px;background-image:linear-gradient(90deg,rgba(5,27,42,.72),rgba(5,27,42,.16) 62%),url('../assets/images/ship-sunrise-clean.jpg')}
+.home-after-copy{max-width:680px}
+.home-after-copy h2{font-size:clamp(3.2rem,6.5vw,6.4rem);line-height:.84}
+.home-after-copy>p:not(.script){font-size:1.05rem}
+
+/* Remove accidental giant sizing across internal pages */
+.page-title,.home-copy h1{font-size:clamp(3.2rem,6.5vw,6.3rem)}
+.hero-copy{max-width:700px}
+.hero-copy>p{font-size:1rem}
+.section-heading h2,.feature-copy h2,.form-heading h2,.info-card h2,.advisor-card h2,.compact h2{font-size:clamp(2.2rem,4vw,3.6rem)}
+.event-panel h2{font-size:clamp(2.2rem,4vw,3.4rem)!important}
+
+@keyframes gardenDissolve{0%,31%{opacity:1;transform:scale(1)}42%{opacity:.98;transform:scale(1.012)}54%{opacity:.5;filter:blur(2px);transform:scale(1.025)}66%,100%{opacity:0;filter:blur(8px);transform:scale(1.055)}}
+@keyframes pinkGlow{0%,10%{opacity:0}22%,43%{opacity:1}58%{opacity:.7}72%,100%{opacity:.12}}
+@keyframes oceanReveal{0%,43%{opacity:0;transform:scale(1.12)}56%{opacity:.22}69%{opacity:.78;transform:scale(1.07)}86%,100%{opacity:1;transform:scale(1.015)}}
+@keyframes horizonOpen{0%,52%{opacity:0;transform:scaleX(.55)}62%{opacity:.35}76%,100%{opacity:1;transform:scaleX(1)}}
+@keyframes shipEmerges{0%,62%{opacity:0;transform:translateX(13%) scale(1.12)}73%{opacity:.22}86%{opacity:.88;transform:translateX(2%) scale(1.045)}100%{opacity:1;transform:translateX(0) scale(1.015)}}
+@keyframes titleArrives{0%,81%{opacity:0;transform:translate(-50%,-42%)}91%{opacity:.55}100%{opacity:1;transform:translate(-50%,-50%)}}
+
+@media(max-width:900px){.shell{width:min(100% - 28px,1120px)}.site-menu{gap:14px}.site-menu a{font-size:.68rem}.landing-sequence{min-height:580px}.intro-title{top:54%}.intro-title h1{font-size:clamp(3.4rem,13vw,5.8rem)}.intro-title h2{font-size:clamp(1.8rem,7vw,3rem)}.home-after-copy{text-align:center;margin:auto}.home-after-copy .button-row{justify-content:center}}
+@media(max-width:700px){.sound-gate-card{padding:30px 22px}.intro-garden{background-position:center}.intro-title{width:92vw}.home-after-intro{min-height:620px}.section{padding:68px 0}}

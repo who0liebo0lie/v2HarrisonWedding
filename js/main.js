@@ -7,26 +7,37 @@ document.addEventListener("DOMContentLoaded",()=>{
   document.querySelectorAll("[data-year]").forEach(el=>el.textContent=new Date().getFullYear());
   const reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const items=document.querySelectorAll(".reveal");
-  if(reduced||!("IntersectionObserver" in window)){items.forEach(el=>el.classList.add("is-visible"));return;}
-  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("is-visible");observer.unobserve(entry.target);}}),{threshold:.16});
-  items.forEach(el=>observer.observe(el));
-  const sky=document.querySelector(".cinematic-sky");
-  if(sky){window.addEventListener("scroll",()=>{const y=Math.min(window.scrollY,700);sky.style.transform=`scale(1.01) translateY(${y*.09}px)`;},{passive:true});}
+  if(reduced||!("IntersectionObserver" in window)){items.forEach(el=>el.classList.add("is-visible"));}
+  else{
+    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("is-visible");observer.unobserve(entry.target);}}),{threshold:.16});
+    items.forEach(el=>observer.observe(el));
+  }
 });
 
-// Cinematic intro controller
 document.addEventListener("DOMContentLoaded",()=>{
   const body=document.body;
   const intro=document.querySelector(".landing-sequence");
   if(!intro)return;
+  const gate=document.querySelector("[data-sound-gate]");
+  const audio=document.querySelector("[data-intro-audio]");
+  let timer;
   const finish=()=>{
     intro.classList.add("sequence-done");
     body.classList.add("intro-complete");
     body.style.overflow="";
+    if(audio){audio.pause();audio.currentTime=0;}
   };
-  const timer=window.setTimeout(finish,12200);
+  const start=(withSound)=>{
+    gate?.classList.add("is-dismissed");
+    intro.classList.remove("is-paused");
+    if(withSound&&audio){audio.volume=.68;audio.play().catch(()=>{});}
+    timer=window.setTimeout(finish,21400);
+  };
+  document.querySelector("[data-start-sound]")?.addEventListener("click",()=>start(true));
+  document.querySelector("[data-start-silent]")?.addEventListener("click",()=>start(false));
   document.querySelector("[data-skip-intro]")?.addEventListener("click",()=>{
     window.clearTimeout(timer);
+    gate?.classList.add("is-dismissed");
     intro.classList.add("is-skipped");
     window.setTimeout(finish,350);
   });

@@ -28,7 +28,21 @@
   </div>
 </nav>
 <main>
-<section class="landing-sequence" aria-labelledby="home-title">
+<div class="sound-gate" data-sound-gate>
+  <div class="sound-gate-card">
+    <p class="script">Julia & Wesley</p>
+    <h1>Enter our story</h1>
+    <p>For the full cinematic experience, begin with sound.</p>
+    <div class="sound-gate-actions">
+      <button class="button primary" type="button" data-start-sound>Begin with sound</button>
+      <button class="button ghost" type="button" data-start-silent>Continue silently</button>
+    </div>
+  </div>
+</div>
+<audio data-intro-audio preload="auto">
+  <source src="assets/audio-intro.wav" type="audio/wav">
+</audio>
+<section class="landing-sequence is-paused" aria-labelledby="home-title">
   <div class="intro-garden" aria-hidden="true"></div>
   <div class="intro-glow" aria-hidden="true"></div>
   <div class="intro-ocean" aria-hidden="true"></div>
