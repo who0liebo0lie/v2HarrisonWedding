@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     gate?.classList.add("is-dismissed");
     intro.classList.remove("is-paused");
     if(withSound&&audio){audio.volume=.68;audio.play().catch(()=>{});}
-    timer=window.setTimeout(finish,21400);
+    timer=window.setTimeout(finish,26400);
   };
   document.querySelector("[data-start-sound]")?.addEventListener("click",()=>start(true));
   document.querySelector("[data-start-silent]")?.addEventListener("click",()=>start(false));

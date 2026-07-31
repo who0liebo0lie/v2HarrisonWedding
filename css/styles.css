@@ -126,3 +126,118 @@ body.cinematic-home:not(.intro-complete) .landing-sequence{
 body.cinematic-home:not(.intro-complete) .sound-gate{position:fixed;inset:0;z-index:500}
 .landing-sequence.sequence-done{display:none!important}
 @media(max-width:900px){body.cinematic-home:not(.intro-complete) .landing-sequence{min-height:0}}
+
+/* v5 cinematic correction: preserve Julia & Wesley and reveal the ship from the horizon. */
+.landing-sequence{background:#102b3c;isolation:isolate}
+.intro-ocean{
+  background-image:
+    linear-gradient(180deg,rgba(255,208,188,.06),rgba(234,121,149,.10) 42%,rgba(10,43,63,.22) 78%,rgba(4,23,36,.42)),
+    url('../assets/images/ocean-sunrise.jpg');
+  background-position:center;
+  background-size:cover;
+  opacity:0;
+  transform:scale(1.11);
+  animation:oceanRevealV5 26s cubic-bezier(.18,.72,.2,1) forwards;
+}
+.intro-ship{
+  inset:8% -6% -2% 22%;
+  background-image:url('../assets/images/ship-scene-cropped.jpg');
+  background-position:center;
+  background-size:cover;
+  clip-path:none;
+  opacity:0;
+  transform-origin:73% 57%;
+  transform:translate(15%,10%) scale(.42);
+  filter:saturate(1.04) contrast(1.03);
+  -webkit-mask-image:radial-gradient(ellipse 72% 70% at 68% 58%,#000 46%,rgba(0,0,0,.92) 62%,transparent 88%);
+  mask-image:radial-gradient(ellipse 72% 70% at 68% 58%,#000 46%,rgba(0,0,0,.92) 62%,transparent 88%);
+  animation:shipEmergesV5 26s cubic-bezier(.16,.72,.18,1) forwards;
+}
+.intro-garden{animation:gardenDissolveV5 26s ease-in-out forwards}
+.intro-glow{animation:pinkGlowV5 26s ease-in-out forwards}
+.intro-horizon{animation:horizonOpenV5 26s ease-in-out forwards}
+.intro-title{top:48%;left:57%;width:min(760px,54vw);animation:titleArrivesV5 26s ease forwards}
+.intro-title h1{font-size:clamp(3.6rem,7vw,7.2rem)}
+.intro-title h2{font-size:clamp(1.9rem,3.8vw,3.8rem)}
+.intro-couple-memory{
+  position:absolute;
+  z-index:2;
+  left:4vw;
+  bottom:5vh;
+  width:min(29vw,390px);
+  margin:0;
+  padding:8px;
+  border-radius:28px;
+  background:rgba(255,250,241,.88);
+  box-shadow:0 28px 80px rgba(2,20,31,.42);
+  opacity:0;
+  transform:translate(-4vw,8vh) scale(1.55);
+  transform-origin:center 70%;
+  animation:coupleMemoryV5 26s cubic-bezier(.18,.75,.2,1) forwards;
+}
+.intro-couple-memory img{width:100%;height:min(54vh,570px);object-fit:cover;object-position:center 35%;border-radius:21px}
+.intro-particles i{animation-duration:8.5s}
+
+@keyframes gardenDissolveV5{
+  0%,34%{opacity:1;transform:scale(1);filter:none}
+  44%{opacity:.96;transform:scale(1.012)}
+  56%{opacity:.54;transform:scale(1.03);filter:blur(1px)}
+  68%,100%{opacity:0;transform:scale(1.065);filter:blur(8px)}
+}
+@keyframes pinkGlowV5{
+  0%,8%{opacity:0}
+  20%,44%{opacity:1}
+  56%{opacity:.72}
+  72%,100%{opacity:.08}
+}
+@keyframes oceanRevealV5{
+  0%,36%{opacity:0;transform:scale(1.13)}
+  48%{opacity:.18}
+  60%{opacity:.7;transform:scale(1.075)}
+  78%,100%{opacity:1;transform:scale(1.015)}
+}
+@keyframes horizonOpenV5{
+  0%,45%{opacity:0;transform:scaleX(.32)}
+  58%{opacity:.36}
+  72%,100%{opacity:1;transform:scaleX(1)}
+}
+@keyframes shipEmergesV5{
+  0%,54%{opacity:0;transform:translate(15%,10%) scale(.42)}
+  63%{opacity:.10;transform:translate(11%,7%) scale(.52)}
+  72%{opacity:.34;transform:translate(7%,4%) scale(.67)}
+  82%{opacity:.76;transform:translate(2%,1%) scale(.9)}
+  92%,100%{opacity:1;transform:translate(0,0) scale(1.03)}
+}
+@keyframes coupleMemoryV5{
+  0%,38%{opacity:0;transform:translate(-4vw,8vh) scale(1.55)}
+  48%{opacity:.18}
+  60%{opacity:.86;transform:translate(0,2vh) scale(1.12)}
+  72%,100%{opacity:1;transform:translate(0,0) scale(1)}
+}
+@keyframes titleArrivesV5{
+  0%,82%{opacity:0;transform:translate(-50%,-40%)}
+  90%{opacity:.42}
+  100%{opacity:1;transform:translate(-50%,-50%)}
+}
+
+@media(max-width:900px){
+  .intro-couple-memory{width:min(38vw,330px);left:3vw;bottom:4vh}
+  .intro-couple-memory img{height:min(46vh,480px)}
+  .intro-title{left:62%;width:65vw}
+}
+@media(max-width:700px){
+  .intro-ship{inset:12% -20% 0 8%}
+  .intro-couple-memory{width:38vw;left:4vw;bottom:5vh;padding:5px;border-radius:18px}
+  .intro-couple-memory img{height:42vh;border-radius:14px}
+  .intro-title{left:58%;top:42%;width:76vw;text-align:right}
+  .intro-title h1{font-size:clamp(2.8rem,13vw,4.5rem)}
+  .intro-title h2{font-size:clamp(1.45rem,6vw,2.35rem)}
+  .intro-title .script{font-size:1.7rem}
+}
+
+/* v6 approved Adventure and Explore layouts */
+.adventure-approved{background:#fff7ec;overflow:hidden}.adventure-masthead{position:relative;text-align:center;padding:56px 20px 24px;background:radial-gradient(circle at 50% 110%,rgba(245,179,105,.24),transparent 45%),linear-gradient(#fffaf2,#f8ead7)}.adventure-brand{font-size:2.4rem;color:var(--pink);margin:0}.adventure-masthead h1{font:600 clamp(3.4rem,6vw,5.8rem)/.95 "Cormorant Garamond",serif;color:#9a5b0d;margin:.15em 0}.adventure-dates{color:var(--pink);text-transform:uppercase;letter-spacing:.28em;font-weight:600}.adventure-tagline{text-transform:uppercase;letter-spacing:.12em;color:#8a6b44;max-width:550px;margin:12px auto}.adventure-floral{position:absolute;font-size:9rem;color:#e42e66;opacity:.18;top:15px}.adventure-floral-left{left:3vw}.adventure-floral-right{right:3vw}.adventure-route{max-height:310px;overflow:hidden;background:#082d43}.adventure-route img{width:100%;height:310px;object-fit:cover;object-position:center}.adventure-itinerary{padding:28px 0 50px}.itinerary-row{display:grid;grid-template-columns:110px minmax(190px,.8fr) minmax(260px,1.2fr) minmax(240px,1fr);min-height:220px;background:rgba(255,252,246,.96);border:1px solid rgba(180,128,55,.28);border-radius:24px;overflow:hidden;margin:16px 0;box-shadow:0 12px 34px rgba(92,53,16,.08)}.itinerary-date{display:flex;flex-direction:column;align-items:center;justify-content:center;border-right:1px solid #ead9bd;color:var(--pink);padding:18px}.itinerary-date strong{font:600 2.2rem "Cormorant Garamond",serif}.itinerary-date span{letter-spacing:.1em}.itinerary-date b{font-size:2rem;color:#a66a17;margin-top:18px}.itinerary-intro{padding:30px}.itinerary-intro h2{font:600 2.25rem/1 "Cormorant Garamond",serif;color:#cf3262;margin:0}.itinerary-intro .script{font-size:1.55rem;color:#e15a76;margin:.15rem 0}.itinerary-intro p:last-child{font-size:.9rem}.itinerary-row>img{width:100%;height:100%;min-height:220px;object-fit:cover}.itinerary-details{padding:28px;display:flex;flex-direction:column;justify-content:center;gap:9px}.itinerary-details p{margin:0;font-size:.88rem}.itinerary-details b{color:#df3d6b;margin-right:9px}.itinerary-details em{color:#df3d6b}.itinerary-details a{color:#a76417;font-weight:600}.itinerary-details.two-col{display:grid;grid-template-columns:1fr 1fr;align-content:center}.detail-link{margin-top:12px;text-transform:uppercase;letter-spacing:.08em;font-size:.8rem}.detail-buttons{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.detail-buttons a{border:1px solid #d8a35b;padding:9px 12px;border-radius:999px;text-decoration:none}.adventure-closing{text-align:center;font-size:2.5rem;color:var(--pink);padding:0 20px 45px;margin:0}
+.explore-approved{background:#071f31}.explore-top{background:linear-gradient(180deg,#fff8ed 0 73%,#071f31 73%);padding:45px 0 0}.explore-top h1{font:600 clamp(3.8rem,7vw,6.4rem)/.9 "Cormorant Garamond",serif;color:#354218;margin:0}.explore-top h1 span{color:var(--pink)}.explore-subtitle{font:500 1.35rem "Cormorant Garamond",serif;margin:20px 0 0}.explore-question{font-size:1.7rem;margin:0 0 25px}.explore-top img{width:100%;height:360px;object-fit:cover;border-radius:30px 30px 0 0}.experience-photo-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:-3px;padding:0 0 38px}.experience-photo-grid button{height:230px;border:1px solid #d5a747;border-radius:20px;overflow:hidden;position:relative;background:linear-gradient(180deg,transparent 22%,rgba(4,20,31,.94) 78%),var(--card-image) center/cover;color:#fff;cursor:pointer;padding:135px 12px 15px;text-align:center}.experience-photo-grid button:hover,.experience-photo-grid button:focus{transform:translateY(-6px);transition:.25s;box-shadow:0 16px 35px rgba(0,0,0,.3)}.experience-photo-grid span{display:block;color:#f3c865;text-transform:uppercase;font:600 1.25rem "Cormorant Garamond",serif}.experience-photo-grid small{font-size:.72rem}.explore-map-section{background:linear-gradient(#071f31,#041824);color:#fff;padding:42px 0 80px;text-align:center}.explore-map-section h2{font:600 2.3rem "Cormorant Garamond",serif;color:#e7b957;text-transform:uppercase;letter-spacing:.08em}.neighborhood-feature{display:none;margin-top:28px;background:#fff8ed;color:#29251e;border-radius:28px;overflow:hidden;text-align:left;grid-template-columns:.85fr 1.35fr;box-shadow:0 24px 60px rgba(0,0,0,.28)}.neighborhood-feature.active{display:grid}.neighborhood-copy{padding:38px}.neighborhood-copy h2{font:600 3.5rem "Cormorant Garamond",serif;color:#2f3821;text-transform:none;letter-spacing:0;margin:.1em 0}.neighborhood-feature>img{width:100%;height:100%;min-height:390px;object-fit:cover}.neighborhood-feature .venue-grid{margin-top:25px}.neighborhood-feature .venue-card{background:#fff;border-color:#e7d5b8}.map-buttons button{transition:.2s}.map-buttons button:hover{transform:translateY(-2px)}
+.detail-hero{min-height:470px;display:flex;align-items:end;color:#fff;background:linear-gradient(90deg,rgba(6,28,42,.76),rgba(6,28,42,.15)),var(--detail-image) center/cover;padding:80px 0}.detail-hero h1{font:600 clamp(3.5rem,7vw,6.5rem)/.9 "Cormorant Garamond",serif;max-width:900px;margin:.1em 0}.detail-content h2{font:600 3rem "Cormorant Garamond",serif}.detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:30px 0}.detail-grid article{background:#fff;border:1px solid #ead7bc;border-radius:20px;padding:22px}.detail-grid h3{font:600 1.8rem "Cormorant Garamond",serif;margin:.1em 0;color:var(--pink)}
+@media(max-width:980px){.itinerary-row{grid-template-columns:88px 1fr 1fr}.itinerary-details{grid-column:2/-1}.experience-photo-grid{grid-template-columns:repeat(3,1fr)}.neighborhood-feature.active{grid-template-columns:1fr}.neighborhood-feature>img{min-height:300px}.detail-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.adventure-route,.adventure-route img{height:210px}.itinerary-row{grid-template-columns:72px 1fr}.itinerary-row>img,.itinerary-details{grid-column:2}.itinerary-row>img{height:190px;min-height:0}.itinerary-intro{padding:22px}.itinerary-intro h2{font-size:1.8rem}.itinerary-details{padding:20px}.experience-photo-grid{grid-template-columns:repeat(2,1fr)}.experience-photo-grid button{height:190px;padding-top:110px}.explore-top img{height:250px}.neighborhood-copy{padding:24px}.neighborhood-copy h2{font-size:2.7rem}}
