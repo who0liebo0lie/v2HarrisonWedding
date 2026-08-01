@@ -27,3 +27,31 @@
 .activity-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}.activity-card{position:relative;display:flex;min-width:0;flex-direction:column;align-items:center;text-align:center;gap:4px;padding:13px 7px 11px;border:1px solid #d8c4a6;border-radius:12px;background:rgba(255,255,255,.76);cursor:pointer}.activity-card input{position:absolute;opacity:0}.activity-icon{display:grid;place-items:center;width:48px;height:48px;border:1px solid #d5ab58;border-radius:50%;font-size:25px;background:#fff9ef}.activity-check{position:absolute;top:-7px;right:9px;display:none;width:22px;height:22px;border-radius:50%;background:var(--pink);color:#fff}.activity-card strong{font-size:11px;line-height:1.18;text-transform:uppercase}.activity-card small{font-size:10px;color:#7a6e61}.activity-card:has(input:checked){border-color:var(--pink);background:#fff2f6}.activity-card:has(input:checked) .activity-check{display:grid;place-items:center}
 .aligned-card{display:grid;grid-template-columns:58px 1fr auto;gap:14px;align-items:center;padding:18px 20px;border-radius:13px;background:linear-gradient(135deg,#092e46,#0b405c);color:#fff;border:1px solid #d5a648;box-shadow:0 9px 20px rgba(8,45,67,.18)}.aligned-compass{display:grid;place-items:center;width:52px;height:52px;border:1px solid #d7ae5d;border-radius:50%;color:#e2b85c;font-size:28px}.aligned-name{margin:0 0 4px;color:#e7c57a;font:600 22px Georgia,serif;text-transform:uppercase;letter-spacing:.08em}.aligned-name span{display:block;font:10px Arial,sans-serif;letter-spacing:.35em}.aligned-card p{margin:0;font-size:12px;line-height:1.45}.aligned-card a{white-space:nowrap;padding:9px 13px;border-radius:999px;background:#d4a54a;color:#082d43;text-decoration:none;font-size:11px;font-weight:800;text-transform:uppercase}.rsvp-submit{justify-self:center;min-width:230px;margin-top:4px;border:0;border-radius:999px;padding:14px 24px;background:linear-gradient(135deg,#e32265,#bd0d4b);color:#fff;font-size:15px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;box-shadow:0 9px 18px rgba(189,13,75,.24);cursor:pointer}.rsvp-submit:hover{transform:translateY(-1px);box-shadow:0 12px 22px rgba(189,13,75,.3)}.rsvp-script{text-align:center;margin:-10px 0 0;color:var(--pink);font:italic 20px Georgia,serif}.rsvp-confirmation{padding:22px;border:1px solid #d5a648;border-radius:14px;background:#fff7df;text-align:center}.rsvp-confirmation h2{margin:4px;color:#173b50;font:600 30px Georgia,serif}.rsvp-confirmation p{margin:8px}.confirmation-flower{font-size:25px;color:var(--pink)}.review-note{font-size:12px;color:#796b5d}.sr-label{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
 @media(max-width:760px){.rsvp-luxe-shell{padding:22px 8px 60px}.rsvp-luxe-card{padding:46px 25px 34px;border-radius:20px}.rsvp-two-col,.rsvp-choice-row{grid-template-columns:1fr}.activity-grid{grid-template-columns:repeat(2,1fr)}.aligned-card{grid-template-columns:48px 1fr}.aligned-card a{grid-column:1/-1;text-align:center}.rsvp-floral{width:44%;opacity:.85}.rsvp-luxe-header h1{font-size:42px}.rsvp-nav{position:relative}.rsvp-nav .nav-anchor{display:none}}
+
+/* Version 13 corrective refinements */
+.action-chip.sat-bingo,.action-chip.sat-pickleball{min-width:190px;text-align:center;padding:7px 12px;font-size:11px;line-height:1.1}
+.explore-shell .neighborhood-panel{grid-template-columns:32% 68%;grid-template-rows:50% 9% 41%}
+.explore-shell .neighborhood-copy{padding:26px 24px;overflow:hidden}
+.explore-shell .neighborhood-copy h2{font-size:clamp(30px,4vw,44px);line-height:.98;overflow-wrap:anywhere;hyphens:auto;margin:8px 0 14px}
+.explore-shell .neighborhood-copy p{font-size:15px;line-height:1.42;margin:0}
+.explore-shell .neighborhood-panel>img{object-fit:cover;object-position:center center;min-width:0}
+.explore-shell .venue-heading{padding:9px 10px;font-size:19px}
+.explore-shell .venue-cards{padding:12px 18px 18px;gap:10px}
+.explore-shell .venue-cards article{padding:13px;overflow:hidden}
+.explore-shell .venue-cards h3{font-size:18px;overflow-wrap:anywhere}
+
+/* RSVP: use clean decorative corners only; prevent every overlap */
+.rsvp-luxe-card{overflow:hidden;padding-top:46px;padding-bottom:54px}
+.rsvp-floral{z-index:0;max-width:none;width:155px;height:185px;object-fit:contain;opacity:1}
+.rsvp-floral-tl{left:0;top:0;object-position:left top}.rsvp-floral-tr{right:0;top:0;object-position:right top}
+.rsvp-floral-bl{left:0;bottom:0;object-position:left bottom}.rsvp-floral-br{right:0;bottom:0;object-position:right bottom}
+.rsvp-luxe-header,.rsvp-luxe-form{z-index:2}
+.rsvp-luxe-header{max-width:560px;margin:0 auto;padding:0 25px}
+.rsvp-luxe-header h1{font-size:clamp(38px,5.2vw,58px);line-height:1.02;margin:8px 0 8px}
+.rsvp-anchor{font-size:30px;margin-bottom:2px}.rsvp-kicker{font-size:13px}.rsvp-personal{margin:14px 0 0}
+.rsvp-luxe-form{margin-top:22px;gap:20px}
+.rsvp-section textarea{position:relative;z-index:3;min-height:110px;background:#fff!important}
+.rsvp-submit{position:relative;z-index:3;margin-top:8px}
+.rsvp-script{position:relative;z-index:3;margin:0}
+.aligned-card{position:relative;z-index:3}
+@media(max-width:760px){.rsvp-luxe-header{padding:0 10px}.rsvp-floral{width:115px;height:145px}.action-chip.sat-bingo,.action-chip.sat-pickleball{min-width:auto;font-size:8px;padding:4px 6px}}
