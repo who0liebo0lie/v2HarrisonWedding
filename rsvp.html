@@ -1,1 +1,120 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RSVP | Julia & Wesley</title><link rel="stylesheet" href="css/site.css"></head><body class="rsvp-body"><nav class="real-nav"><a href="index.html?skip=1">Home</a><a href="our-story.html">Our Story</a><a href="adventure.html">The Adventure</a><a href="explore.html">Explore the Ship</a><a href="travel.html">Travel & Booking</a><a href="rsvp.html" aria-current="page">RSVP</a></nav><main class="rsvp-page"><p class="eyebrow">Julia & Wesley</p><h1>RSVP</h1><p class="deadline">Please respond by <strong>September 15, 2026</strong>.</p><section class="booking-note"><h2>Have you booked your cabin?</h2><p>Your wedding RSVP and your cruise reservation are separate. Cabins will be booked through Aligned Journeys.</p><a href="travel.html">View Travel & Booking →</a></section><form class="rsvp-form" id="rsvp-form"><label>First and last name<input name="name" id="guest-name" required></label><label>Will you join us?<select name="attendance" required><option value="">Choose one</option><option>Joyfully accepts</option><option>Regretfully declines</option></select></label><fieldset><legend>Activities</legend><label><input type="checkbox" name="activities" value="white-party"> Welcome White Party</label><label><input type="checkbox" name="activities" value="pickleball"> Pickleball</label><label><input type="checkbox" name="activities" value="bingo"> Virtual Bingo</label></fieldset><label>Your Bingo fun fact<textarea name="bingoFact" rows="3" placeholder="Share one surprising or fun fact about yourself."></textarea></label><label>Questions or a message for Julia and Wesley<textarea name="message" rows="4"></textarea></label><button type="submit">Submit RSVP</button><p class="form-status" aria-live="polite"></p></form></main><script>const n=localStorage.getItem('weddingGuestName');if(n)document.querySelector('#guest-name').value=n;document.querySelector('#rsvp-form').addEventListener('submit',e=>{e.preventDefault();document.querySelector('.form-status').textContent='Thank you! This review form is not connected to the private RSVP backend yet.';});</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>RSVP | Julia & Wesley</title>
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body class="rsvp-body rsvp-luxe-body">
+  <nav class="real-nav rsvp-nav" aria-label="Primary navigation">
+    <a class="nav-anchor" href="index.html?skip=1">⚓</a>
+    <a href="index.html?skip=1">Home</a>
+    <a href="our-story.html">Our Story</a>
+    <a href="adventure.html">The Adventure</a>
+    <a href="explore.html">Explore the Ship</a>
+    <a href="travel.html">Travel & Booking</a>
+    <a href="rsvp.html" aria-current="page">RSVP</a>
+  </nav>
+
+  <main class="rsvp-luxe-shell">
+    <section class="rsvp-luxe-card" aria-labelledby="rsvp-title">
+      <img class="rsvp-floral rsvp-floral-tl" src="assets/rsvp/top-left.png" alt="">
+      <img class="rsvp-floral rsvp-floral-tr" src="assets/rsvp/top-right.png" alt="">
+      <img class="rsvp-floral rsvp-floral-bl" src="assets/rsvp/bottom-left.png" alt="">
+      <img class="rsvp-floral rsvp-floral-br" src="assets/rsvp/bottom-right.png" alt="">
+
+      <header class="rsvp-luxe-header">
+        <div class="rsvp-anchor" aria-hidden="true">⚓</div>
+        <p class="rsvp-kicker">Julia &amp; Wesley</p>
+        <h1 id="rsvp-title">Will you set sail with us?</h1>
+        <div class="rsvp-divider"><span>✿</span></div>
+        <p class="rsvp-deadline">Please respond by <strong>September 15, 2026</strong></p>
+        <p class="rsvp-personal" id="rsvp-welcome">Welcome aboard!</p>
+      </header>
+
+      <form class="rsvp-luxe-form" id="rsvp-form">
+        <section class="rsvp-section" aria-labelledby="responding-heading">
+          <h2 id="responding-heading">Who’s responding</h2>
+          <div class="rsvp-two-col">
+            <label>First name<input name="firstName" id="first-name" autocomplete="given-name" required></label>
+            <label>Last name<input name="lastName" id="last-name" autocomplete="family-name" required></label>
+          </div>
+        </section>
+
+        <section class="rsvp-section" aria-labelledby="attendance-heading">
+          <h2 id="attendance-heading">Are you joining us?</h2>
+          <div class="rsvp-choice-row">
+            <label class="rsvp-radio-card"><input type="radio" name="attendance" value="yes" required><span class="choice-mark">✓</span><strong>Yes, we’re in!</strong><small>We can’t wait.</small></label>
+            <label class="rsvp-radio-card"><input type="radio" name="attendance" value="no"><span class="choice-mark">♡</span><strong>Sadly, no</strong><small>We’ll miss this adventure.</small></label>
+          </div>
+        </section>
+
+        <section class="rsvp-section" aria-labelledby="activities-heading">
+          <h2 id="activities-heading">Planned activities</h2>
+          <p class="section-help">Select everything you are excited to join.</p>
+          <div class="activity-grid">
+            <label class="activity-card"><input type="checkbox" name="activities" value="white-party"><span class="activity-check">✓</span><span class="activity-icon">🍸</span><strong>Welcome White Party</strong><small>Jan 23 · 7:00 PM</small></label>
+            <label class="activity-card"><input type="checkbox" name="activities" value="pickleball"><span class="activity-check">✓</span><span class="activity-icon">🏓</span><strong>Pickleball Tournament</strong><small>First round Jan 23</small></label>
+            <label class="activity-card"><input type="checkbox" name="activities" value="bingo"><span class="activity-check">✓</span><span class="activity-icon">▦</span><strong>Bingo Adventure</strong><small>Virtual game</small></label>
+            <label class="activity-card"><input type="checkbox" name="activities" value="wedding"><span class="activity-check">✓</span><span class="activity-icon">🏆</span><strong>Wedding &amp; Finals</strong><small>Jan 26–27</small></label>
+          </div>
+        </section>
+
+        <aside class="aligned-card" aria-label="Cruise booking information">
+          <div class="aligned-compass">✦</div>
+          <div>
+            <p class="aligned-name">Aligned <span>Journeys</span></p>
+            <p>Cruise reservations are handled separately through Aligned Journeys.</p>
+          </div>
+          <a href="travel.html">View Travel &amp; Booking →</a>
+        </aside>
+
+        <section class="rsvp-section" aria-labelledby="bingo-heading">
+          <h2 id="bingo-heading">Your Bingo clue</h2>
+          <label class="sr-label" for="bingo-fact">Share one surprising or fun fact about yourself.</label>
+          <textarea id="bingo-fact" name="bingoFact" rows="3" placeholder="Share one surprising or fun fact about yourself."></textarea>
+        </section>
+
+        <section class="rsvp-section" aria-labelledby="message-heading">
+          <h2 id="message-heading">Anything you’d like us to know?</h2>
+          <label class="sr-label" for="guest-message">Questions or comments</label>
+          <textarea id="guest-message" name="message" rows="4" placeholder="Celebrating something? Traveling with another guest? Leave us a note here."></textarea>
+        </section>
+
+        <button class="rsvp-submit" type="submit"><span aria-hidden="true">⚓</span> Send Our RSVP</button>
+        <p class="rsvp-script">Counting down the days! ♡</p>
+        <div class="rsvp-confirmation" id="rsvp-confirmation" hidden role="status" aria-live="polite">
+          <span class="confirmation-flower">✿</span>
+          <h2>You’re on the guest list!</h2>
+          <p>We can’t wait to celebrate with you aboard <em>Harmony of the Seas</em>.</p>
+          <p class="review-note">This design-review form is not connected to the private RSVP backend yet.</p>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    const stored = (localStorage.getItem('weddingGuestName') || '').trim();
+    const first = document.querySelector('#first-name');
+    const last = document.querySelector('#last-name');
+    const welcome = document.querySelector('#rsvp-welcome');
+    if (stored) {
+      const parts = stored.split(/\s+/);
+      first.value = parts.shift() || '';
+      last.value = parts.join(' ');
+      welcome.textContent = `Welcome aboard, ${first.value}!`;
+    }
+    [first,last].forEach(input => input.addEventListener('input', () => {
+      const name = `${first.value} ${last.value}`.trim();
+      if (name) localStorage.setItem('weddingGuestName', name);
+      welcome.textContent = first.value ? `Welcome aboard, ${first.value}!` : 'Welcome aboard!';
+    }));
+    document.querySelector('#rsvp-form').addEventListener('submit', event => {
+      event.preventDefault();
+      document.querySelector('#rsvp-confirmation').hidden = false;
+      document.querySelector('#rsvp-confirmation').scrollIntoView({behavior:'smooth',block:'center'});
+    });
+  </script>
+</body>
+</html>
