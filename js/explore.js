@@ -1,19 +1,18 @@
 (() => {
-  const data={
-    'Pool Deck':['Sunshine, swimming, and open-air fun high above the ocean.',['Main Pool','Solarium','Perfect Storm waterslides','Pool bars']],
-    'Central Park':['A lush, open-air neighborhood in the heart of the ship, with gardens, dining, and evening music.',['150 Central Park','Chops Grille','Jamie’s Italian','Trellis Bar']],
-    'Entertainment Place':['The ship’s energetic show district for live performances and unforgettable nights.',['Royal Theater','Studio B ice rink','Comedy club','Casino Royale']],
-    'Boardwalk':['A playful open-air neighborhood with family attractions, casual dining, and the AquaTheater.',['AquaTheater','Boardwalk Dog House','Carousel','Johnny Rockets']],
-    'Royal Promenade':['A lively indoor boulevard for cafés, shopping, music, parades, and people-watching.',['Café Promenade','Schooner Bar','Sorrento’s','Shopping']],
-    'Youth Zone':['Dedicated spaces for kids and teens to play, create, and make new friends.',['Adventure Ocean','Teen spaces','Arcade','Family activities']],
-    'Vitality Spa':['A peaceful retreat for treatments, fitness, and quiet time.',['Vitality Spa','Fitness Center','Salon','Wellness classes']]
-  };
-  const modal=document.querySelector('#neighborhood-modal');
-  const title=document.querySelector('#neighborhood-title'); const copy=document.querySelector('#neighborhood-copy'); const venues=document.querySelector('#neighborhood-venues');
-  document.querySelectorAll('.neighborhood').forEach(b=>b.addEventListener('click',()=>{const n=b.dataset.neighborhood;title.textContent=n;copy.textContent=data[n][0];venues.innerHTML=data[n][1].map(x=>`<li>${x}</li>`).join('');modal.classList.add('open')}));
-  modal.querySelector('.modal-close').onclick=()=>modal.classList.remove('open'); modal.onclick=e=>{if(e.target===modal)modal.classList.remove('open')};
-  const stage=document.querySelector('#ship-interactive'), img=stage.querySelector('img'); let scale=1,rx=0,ry=0,down=false,x0=0,y0=0;
-  const draw=()=>img.style.transform=`scale(${scale}) rotateX(${ry}deg) rotateY(${rx}deg)`;
-  stage.addEventListener('wheel',e=>{e.preventDefault();scale=Math.max(1,Math.min(2.4,scale+(e.deltaY<0?.12:-.12)));draw()},{passive:false});
-  stage.addEventListener('pointerdown',e=>{down=true;x0=e.clientX;y0=e.clientY;stage.setPointerCapture(e.pointerId)}); stage.addEventListener('pointermove',e=>{if(!down)return;rx=Math.max(-18,Math.min(18,rx+(e.clientX-x0)*.08));ry=Math.max(-10,Math.min(10,ry-(e.clientY-y0)*.05));x0=e.clientX;y0=e.clientY;draw()}); stage.addEventListener('pointerup',()=>down=false); stage.addEventListener('pointercancel',()=>down=false);
+ const data={
+  central:{title:'Central Park',copy:'A lush, open-air neighborhood in the heart of the ship. Stroll through gardens, enjoy al fresco dining, live music, and handcrafted cocktails.',image:'central-park.jpg',venues:[['150 Central Park','Specialty dining','Upscale steakhouse'],["Jamie’s Italian",'Specialty dining','Rustic Italian favorites'],['Trellis Bar','Bar','Cocktails beneath the trees'],['Chops Grille','Specialty dining','Classic steakhouse']]},
+  pool:{title:'Pool Deck',copy:'Sunshine, swimming, whirlpools, waterslides, and open-air fun high above the ocean.',image:'pool-deck.jpg',venues:[['Main Pool','Included','Poolside relaxation'],['Solarium','Included','Adults-only retreat'],['Perfect Storm','Included','Waterslides'],['Pool Bars','Bar','Drinks by the water']]},
+  entertainment:{title:'Entertainment Place',copy:'The ship’s energetic show district for live performances, comedy, ice shows, and unforgettable nights.',image:'entertainment.jpg',venues:[['Royal Theater','Entertainment','Live productions'],['Studio B','Entertainment','Ice shows'],['Comedy Live','Entertainment','Comedy club'],['Casino Royale','Entertainment','Gaming']]},
+  boardwalk:{title:'Boardwalk',copy:'A playful open-air neighborhood with family attractions, casual dining, and the AquaTheater.',image:'boardwalk.jpg',venues:[['AquaTheater','Entertainment','High-diving shows'],['Carousel','Included','Classic family ride'],['Boardwalk Dog House','Included dining','Casual bites'],['Johnny Rockets','Specialty dining','Burgers and shakes']]},
+  promenade:{title:'Royal Promenade',copy:'A lively indoor boulevard for cafés, shopping, music, parades, and people-watching.',image:'promenade.jpg',venues:[['Café Promenade','Included dining','Coffee and snacks'],["Sorrento’s",'Included dining','Pizza'],['Schooner Bar','Bar','Piano music'],['Shopping','Explore','Shops and boutiques']]},
+  youth:{title:'Youth Zone',copy:'Dedicated spaces for kids and teens to play, create, and make new friends.',image:'youth-zone.jpg',venues:[['Adventure Ocean','Included','Kids programming'],['Teen Spaces','Included','Teen hangouts'],['Arcade','Activity','Games'],['Family Activities','Included','All-ages fun']]},
+  spa:{title:'Vitality Spa',copy:'A peaceful retreat for treatments, fitness, wellness classes, and quiet time.',image:'vitality-spa.jpg',venues:[['Vitality Spa','Specialty','Treatments and massages'],['Fitness Center','Included','Ocean-view workouts'],['Salon','Specialty','Hair and beauty'],['Wellness Classes','Activity','Mind and body']]}
+ };
+ const title=document.querySelector('#n-title'),copy=document.querySelector('#n-copy'),image=document.querySelector('#n-image'),heading=document.querySelector('#venue-heading'),cards=document.querySelector('#venue-cards');
+ function show(key){const x=data[key]; title.textContent=x.title; copy.textContent=x.copy; image.src=`assets/neighborhoods/${x.image}`; image.alt=`${x.title} on Harmony of the Seas`; heading.textContent=`Venues in ${x.title}`; cards.innerHTML=x.venues.map(v=>`<article><span>${v[1]}</span><h3>${v[0]}</h3><p>${v[2]}</p></article>`).join(''); document.querySelectorAll('.neighborhood').forEach(b=>b.classList.toggle('active',b.dataset.neighborhood===key));}
+ document.querySelectorAll('.neighborhood').forEach(b=>b.addEventListener('click',()=>show(b.dataset.neighborhood))); show('central');
+ const stage=document.querySelector('#ship-interactive'),img=stage.querySelector('img'); let scale=1,rx=0,ry=0,down=false,x0=0,y0=0;
+ const draw=()=>img.style.transform=`scale(${scale}) rotateX(${ry}deg) rotateY(${rx}deg)`;
+ stage.addEventListener('wheel',e=>{e.preventDefault();scale=Math.max(1,Math.min(2.2,scale+(e.deltaY<0?.12:-.12)));draw()},{passive:false});
+ stage.addEventListener('pointerdown',e=>{down=true;x0=e.clientX;y0=e.clientY;stage.setPointerCapture(e.pointerId)});stage.addEventListener('pointermove',e=>{if(!down)return;rx=Math.max(-16,Math.min(16,rx+(e.clientX-x0)*.08));ry=Math.max(-9,Math.min(9,ry-(e.clientY-y0)*.05));x0=e.clientX;y0=e.clientY;draw()});['pointerup','pointercancel','pointerleave'].forEach(evt=>stage.addEventListener(evt,()=>down=false));
 })();

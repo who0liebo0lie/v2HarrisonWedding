@@ -1,1 +1,23 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Home | Julia & Wesley</title><link rel="stylesheet" href="css/site.css"></head><body><section class="intro" aria-label="Cinematic introduction"><div class="intro-layer intro-garden"></div><div class="intro-layer intro-glow"></div><div class="sparkles"></div><div class="intro-layer intro-boat"></div><div class="intro-layer intro-couple"></div><div class="intro-layer intro-final"></div><button class="sound" type="button">Sound on</button><button class="skip" type="button">Skip intro</button><audio id="intro-audio" loop src="assets/audio/intro.wav"></audio></section><script>if(new URLSearchParams(location.search).has("skip"))document.write("<style>.intro{display:none}</style>")</script><script defer src="js/intro.js"></script><main class="page-shell"><img class="approved-page" src="assets/approved/landing-page.png" alt="Home approved design"><a class="hotspot" aria-label="Our Story" href="our-story.html" style="left:22%;top:3%;width:10%;height:4%"></a><a class="hotspot" aria-label="Adventure" href="adventure.html" style="left:32%;top:3%;width:11%;height:4%"></a><a class="hotspot" aria-label="Explore the Ship" href="explore.html" style="left:43%;top:3%;width:11%;height:4%"></a><a class="hotspot" aria-label="Wedding Day" href="wedding-day.html" style="left:54%;top:3%;width:10%;height:4%"></a><a class="hotspot" aria-label="Bingo" href="bingo.html" style="left:64%;top:3%;width:9%;height:4%"></a><a class="hotspot" aria-label="Pickleball" href="pickleball.html" style="left:72%;top:3%;width:9%;height:4%"></a><a class="hotspot" aria-label="Travel" href="travel.html" style="left:80%;top:3%;width:7%;height:4%"></a><a class="hotspot" aria-label="RSVP" href="rsvp.html" style="left:84%;top:1.5%;width:14%;height:6%"></a></main><footer class="site-footer">January 23–28, 2026</footer></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Julia & Wesley</title><link rel="stylesheet" href="css/site.css"></head><body>
+<section class="welcome-gate" id="welcome-gate" aria-labelledby="welcome-title">
+  <div class="welcome-card">
+    <div class="welcome-anchor">⚓</div>
+    <p class="eyebrow">Julia & Wesley</p>
+    <h1 id="welcome-title">Welcome aboard</h1>
+    <p>Please enter your first and last name to open your invitation.</p>
+    <form id="welcome-form">
+      <label>First name<input id="first-name" name="firstName" autocomplete="given-name" required></label>
+      <label>Last name<input id="last-name" name="lastName" autocomplete="family-name" required></label>
+      <button type="submit">Confirm guest</button>
+    </form>
+    <p class="welcome-error" id="welcome-error" aria-live="polite"></p>
+  </div>
+</section>
+<section class="intro" id="intro" aria-label="Cinematic introduction" hidden>
+  <div class="intro-layer intro-garden"></div><div class="intro-layer intro-glow"></div><div class="sparkles" aria-hidden="true"></div><div class="intro-layer intro-final"></div>
+  <div class="intro-welcome" id="intro-welcome"></div>
+  <button class="sound" type="button">Sound on</button><button class="skip" type="button">Skip intro</button><audio id="intro-audio" loop src="assets/audio/intro.wav"></audio>
+</section>
+<main class="page-shell"><img class="approved-page" src="assets/approved/landing-page.png" alt="Julia and Wesley wedding invitation landing page">
+<a class="hotspot" aria-label="Our Story" href="our-story.html" style="left:22%;top:3%;width:10%;height:4%"></a><a class="hotspot" aria-label="Adventure" href="adventure.html" style="left:32%;top:3%;width:11%;height:4%"></a><a class="hotspot" aria-label="Explore the Ship" href="explore.html" style="left:43%;top:3%;width:11%;height:4%"></a><a class="hotspot" aria-label="Wedding Day" href="wedding-day.html" style="left:54%;top:3%;width:10%;height:4%"></a><a class="hotspot" aria-label="Bingo" href="bingo.html" style="left:64%;top:3%;width:9%;height:4%"></a><a class="hotspot" aria-label="Pickleball" href="pickleball.html" style="left:72%;top:3%;width:9%;height:4%"></a><a class="hotspot" aria-label="Travel" href="travel.html" style="left:80%;top:3%;width:7%;height:4%"></a><a class="hotspot" aria-label="RSVP now" href="rsvp.html" style="left:83%;top:1.2%;width:15%;height:6%"></a>
+</main><script src="js/intro.js"></script></body></html>
