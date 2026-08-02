@@ -87,3 +87,56 @@
 .rsvp-luxe-form{padding-bottom:18px}.rsvp-section{position:relative;z-index:2}.rsvp-section textarea{display:block;position:relative;z-index:3;min-height:120px;margin-bottom:0}
 .rsvp-submit{position:relative;display:block;z-index:4;margin:18px auto 0;transform:none}.rsvp-script{position:relative;z-index:4;margin:18px 0 0;padding-bottom:0}.rsvp-confirmation{position:relative;z-index:4}
 @media(max-width:760px){.action-chip.sat-bingo,.action-chip.sat-pickleball{font-size:7px;padding:4px 5px}.itinerary-fix{display:none}.rsvp-luxe-card{padding:44px 22px 52px}.rsvp-luxe-card:after{font-size:38px;right:14px;top:12px}.explore-shell .neighborhood-copy h2{font-size:30px}.explore-shell .venue-cards:has(article:nth-child(3):last-child){grid-template-columns:1fr 1fr}}
+
+/* Version 15 refinements */
+/* Landing date is baked cleanly into the image with no raised rectangle. */
+
+/* Adventure: use one uniform parchment treatment and compact type. */
+.action-chip.sat-bingo,.action-chip.sat-pickleball{
+  left:68.6%!important;width:28.5%;height:auto;min-height:0;
+  display:flex;align-items:center;justify-content:flex-start;
+  border-radius:8px;padding:6px 10px;font-size:10px;line-height:1.05;
+  background:rgba(255,248,239,.92);box-shadow:none;border-color:rgba(216,27,96,.28)
+}
+.action-chip.sat-bingo{top:37.0%!important}
+.action-chip.sat-pickleball{top:41.18%!important}
+.itinerary-fix{background:rgba(255,248,239,.93)!important;border-color:rgba(174,130,78,.22)!important;color:#3e352f!important}
+.wed-panel{left:65.75%;top:77.65%;width:32.75%;height:9.55%;padding:15px 22px;border-radius:14px 14px 0 0}
+.wed-panel h3{font-size:12px;margin-bottom:10px}.wed-grid{font-size:10px;gap:7px 14px}.wed-panel p{font-size:10px;margin:9px 0}.wed-panel p strong{font-size:10px}.wed-panel p strong::first-letter{color:var(--pink)}
+.thu-left{left:14.3%;top:87.1%;width:20.0%;height:9.75%;padding:16px 22px;background:rgba(255,248,239,.95)!important}
+.thu-left h3{font:500 23px/1 Georgia,serif;margin:0 0 4px}.thu-left em{font-size:14px}.thu-left p{font-size:10px;line-height:1.4;margin-top:12px}
+.thu-right{left:65.75%;top:87.16%;width:32.75%;height:9.65%;padding:17px 22px;background:rgba(255,248,239,.95)!important}
+.thu-right p{font-size:10px;line-height:1.4;margin:7px 0 22px}
+
+/* Explore: sharp supplied photos and controlled title wrapping. */
+.explore-shell .neighborhood-copy{padding:23px 22px}
+.explore-shell .neighborhood-copy h2{font-size:36px;line-height:.98;max-width:100%;overflow-wrap:normal;word-break:normal}
+.explore-shell .neighborhood-panel>img{object-fit:cover;object-position:center center;width:100%;height:100%}
+.explore-shell .venue-heading{font-size:18px}
+
+/* RSVP: restore lush tropical invitation personality without layered mockups. */
+.rsvp-luxe-shell{padding:44px 18px 80px}
+.rsvp-luxe-card{overflow:hidden!important;padding:64px 70px 72px!important;border:2px solid #d5a648!important;background:
+ linear-gradient(rgba(255,249,239,.95),rgba(255,249,239,.95)),
+ radial-gradient(circle at 50% 0,rgba(245,201,118,.18),transparent 42%),
+ repeating-linear-gradient(0deg,rgba(140,105,66,.026) 0,rgba(140,105,66,.026) 1px,transparent 1px,transparent 4px)!important;
+ box-shadow:0 28px 72px rgba(0,0,0,.32), inset 0 0 0 8px rgba(255,255,255,.45)!important}
+.rsvp-luxe-card:after{display:none!important}
+.rsvp-floral{display:block!important;position:absolute!important;z-index:1!important;width:190px!important;height:220px!important;object-fit:contain!important;opacity:1!important;pointer-events:none}
+.rsvp-floral-tl{left:-2px!important;top:-2px!important;object-position:left top!important}.rsvp-floral-tr{right:-2px!important;top:-2px!important;object-position:right top!important}
+.rsvp-floral-bl{left:-2px!important;bottom:-2px!important;object-position:left bottom!important}.rsvp-floral-br{right:-2px!important;bottom:-2px!important;object-position:right bottom!important}
+.rsvp-luxe-header{max-width:540px;padding:0 40px;margin:auto;position:relative;z-index:3}
+.rsvp-luxe-header h1{font-size:clamp(46px,6vw,66px)!important;line-height:.98!important;color:#102f46!important}
+.rsvp-luxe-form{position:relative;z-index:3;margin-top:30px;padding-bottom:6px}
+.rsvp-section,.aligned-card,.rsvp-submit,.rsvp-script{position:relative;z-index:4}
+.rsvp-section{background:rgba(255,253,249,.78);border-radius:14px;padding:14px 16px;border:1px solid rgba(211,166,75,.24)}
+.activity-grid{gap:12px}.activity-card{background:#fffaf3}
+.aligned-card{border:1px solid #d5a648}
+.rsvp-submit{margin-top:20px!important}.rsvp-script{margin-top:14px!important;padding-bottom:8px}
+@media(max-width:760px){
+ .action-chip.sat-bingo,.action-chip.sat-pickleball{font-size:7px;padding:4px 5px}
+ .rsvp-luxe-card{padding:54px 22px 58px!important}
+ .rsvp-floral{width:115px!important;height:150px!important}
+ .rsvp-luxe-header{padding:0 12px}
+ .rsvp-section{padding:12px}
+}
