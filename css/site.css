@@ -140,3 +140,44 @@
  .rsvp-luxe-header{padding:0 12px}
  .rsvp-section{padding:12px}
 }
+
+/* Version 16 — clean final corrections */
+/* Adventure is now baked into one image; no patch panels can overlap. */
+.action-chip,.itinerary-fix{display:none!important}
+
+/* RSVP: clean tropical invitation, no cropped mockup fragments. */
+.rsvp-luxe-body{background:linear-gradient(180deg,#0b405c,#062c42)!important}
+.rsvp-luxe-shell{padding:48px 18px 90px!important}
+.rsvp-luxe-card{
+  position:relative!important;overflow:hidden!important;width:min(760px,94vw)!important;
+  margin:auto!important;padding:64px 66px 58px!important;border:2px solid #d5a648!important;
+  border-radius:30px!important;background:#fff9ef!important;
+  box-shadow:0 28px 70px rgba(0,0,0,.34),inset 0 0 0 8px rgba(255,255,255,.55)!important;
+}
+.rsvp-luxe-card:before{content:""!important;position:absolute!important;inset:14px!important;border:1px solid rgba(201,147,47,.45)!important;border-radius:20px!important;z-index:0!important}
+.rsvp-luxe-card:after{content:"🌺"!important;display:block!important;position:absolute!important;right:28px!important;top:22px!important;font-size:48px!important;z-index:1!important}
+.rsvp-floral{display:none!important}
+.rsvp-luxe-header,.rsvp-luxe-form{position:relative!important;z-index:2!important}
+.rsvp-luxe-header{max-width:590px!important;margin:auto!important;padding:0 32px!important;text-align:center!important}
+.rsvp-anchor{font-size:30px!important;margin:0 0 4px!important}
+.rsvp-kicker{font-size:13px!important;letter-spacing:.12em!important}
+.rsvp-luxe-header h1{font-size:clamp(48px,6vw,68px)!important;line-height:.96!important;margin:10px 0 14px!important;color:#102f46!important}
+.rsvp-divider{margin:14px auto!important}.rsvp-personal{margin:17px 0 0!important;font-size:21px!important}
+.rsvp-luxe-form{display:grid!important;gap:18px!important;margin-top:30px!important;padding-bottom:0!important}
+.rsvp-section{padding:16px!important;background:#fffdf9!important;border:1px solid #ead8bc!important;border-radius:14px!important;box-shadow:none!important}
+.rsvp-section h2{font-size:15px!important;margin:0 0 10px!important}
+.rsvp-two-col,.rsvp-choice-row{gap:14px!important}
+.activity-grid{gap:10px!important}
+.activity-card{min-height:112px!important;background:#fffaf2!important}
+.aligned-card{margin:0!important}
+.rsvp-section textarea{min-height:105px!important;margin:6px 0 0!important;position:static!important}
+.rsvp-submit{position:static!important;margin:8px auto 0!important;min-width:245px!important}
+.rsvp-script{position:static!important;margin:0!important;padding:0!important;text-align:center!important}
+@media(max-width:760px){
+ .rsvp-luxe-card{padding:50px 22px 44px!important;border-radius:22px!important}
+ .rsvp-luxe-card:after{font-size:36px!important;right:16px!important;top:14px!important}
+ .rsvp-luxe-header{padding:0 8px!important}
+ .rsvp-luxe-header h1{font-size:42px!important}
+ .rsvp-two-col,.rsvp-choice-row{grid-template-columns:1fr!important}
+ .activity-grid{grid-template-columns:repeat(2,1fr)!important}
+}
