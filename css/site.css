@@ -196,3 +196,35 @@
  .rsvp-floral-tl,.rsvp-floral-tr{width:130px!important;height:165px!important}
  .rsvp-floral-bl,.rsvp-floral-br{width:140px!important;height:175px!important}
 }
+
+/* Version 18 — clean RSVP floral frame and final itinerary corrections */
+.rsvp-floral{display:none!important}
+.rsvp-luxe-card{
+  overflow:hidden!important;
+  padding:72px 68px 92px!important;
+  background:
+    radial-gradient(circle at 4% 4%,rgba(239,76,123,.10),transparent 17%),
+    radial-gradient(circle at 96% 4%,rgba(242,142,54,.10),transparent 17%),
+    radial-gradient(circle at 4% 96%,rgba(239,76,123,.10),transparent 18%),
+    radial-gradient(circle at 96% 96%,rgba(242,142,54,.10),transparent 18%),
+    #fff9ef!important;
+}
+.rsvp-luxe-card:after{display:none!important;content:none!important}
+.rsvp-luxe-header:before,.rsvp-luxe-header:after,
+.rsvp-luxe-form:before,.rsvp-luxe-form:after{
+  position:absolute;z-index:0;pointer-events:none;line-height:1;
+  filter:saturate(1.15);text-shadow:0 2px 8px rgba(0,0,0,.08)
+}
+.rsvp-luxe-header:before{content:"🌿  🌺";left:-64px;top:-42px;font-size:46px;transform:rotate(-12deg)}
+.rsvp-luxe-header:after{content:"🌺  🌿";right:-64px;top:-42px;font-size:46px;transform:rotate(12deg)}
+.rsvp-luxe-form:before{content:"🌺  🌿";left:-52px;bottom:-70px;font-size:48px;transform:rotate(10deg)}
+.rsvp-luxe-form:after{content:"🌿  🌺";right:-52px;bottom:-70px;font-size:48px;transform:rotate(-10deg)}
+.rsvp-luxe-header>* ,.rsvp-luxe-form>*{position:relative;z-index:2}
+.rsvp-submit,.rsvp-script{z-index:3!important}
+@media(max-width:760px){
+  .rsvp-luxe-card{padding:60px 22px 82px!important}
+  .rsvp-luxe-header:before,.rsvp-luxe-header:after{font-size:31px;top:-32px}
+  .rsvp-luxe-header:before{left:-10px}.rsvp-luxe-header:after{right:-10px}
+  .rsvp-luxe-form:before,.rsvp-luxe-form:after{font-size:34px;bottom:-62px}
+  .rsvp-luxe-form:before{left:-6px}.rsvp-luxe-form:after{right:-6px}
+}
