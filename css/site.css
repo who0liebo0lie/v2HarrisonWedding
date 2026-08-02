@@ -271,3 +271,54 @@
   .rsvp-option-two .rsvp-floral-bl,.rsvp-option-two .rsvp-floral-br{width:138px!important;height:135px!important}
   .rsvp-option-two .rsvp-luxe-header{padding:0 10px!important}
 }
+
+/* Version 20 — repaired adventure links and clean RSVP footer */
+.adventure-bingo-link{
+  left:77.2%!important;
+  top:37.45%!important;
+  width:20.2%!important;
+  height:2.75%!important;
+  z-index:30!important;
+}
+.adventure-pickleball-link{
+  left:77.2%!important;
+  top:41.72%!important;
+  width:20.8%!important;
+  height:2.75%!important;
+  z-index:30!important;
+}
+.adventure-hotspot{pointer-events:auto!important}
+
+/* Remove all older emoji/pseudo-floral layers so only Option 2 artwork remains. */
+.rsvp-option-two .rsvp-luxe-header:before,
+.rsvp-option-two .rsvp-luxe-header:after,
+.rsvp-option-two .rsvp-luxe-form:before,
+.rsvp-option-two .rsvp-luxe-form:after{
+  content:none!important;
+  display:none!important;
+}
+.rsvp-option-two .rsvp-floral-bl,
+.rsvp-option-two .rsvp-floral-br{
+  width:190px!important;
+  height:150px!important;
+  bottom:0!important;
+  z-index:1!important;
+}
+.rsvp-option-two .rsvp-floral-bl{left:0!important}
+.rsvp-option-two .rsvp-floral-br{right:0!important}
+.rsvp-option-two .rsvp-luxe-form{
+  padding-bottom:84px!important;
+}
+.rsvp-option-two .rsvp-submit,
+.rsvp-option-two .rsvp-script{
+  position:relative!important;
+  z-index:5!important;
+}
+@media(max-width:760px){
+  .rsvp-option-two .rsvp-floral-bl,
+  .rsvp-option-two .rsvp-floral-br{
+    width:125px!important;
+    height:102px!important;
+  }
+  .rsvp-option-two .rsvp-luxe-form{padding-bottom:62px!important}
+}
