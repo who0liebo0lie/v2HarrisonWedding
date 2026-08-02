@@ -228,3 +228,46 @@
   .rsvp-luxe-form:before,.rsvp-luxe-form:after{font-size:34px;bottom:-62px}
   .rsvp-luxe-form:before{left:-6px}.rsvp-luxe-form:after{right:-6px}
 }
+
+/* Version 19 — RSVP Option 2 and repaired event links */
+.rsvp-option-two{
+  overflow:hidden!important;
+  padding:76px 68px 94px!important;
+  border:3px solid #d7aa45!important;
+  border-radius:30px!important;
+  background:
+    linear-gradient(rgba(255,249,239,.97),rgba(255,249,239,.97)),
+    repeating-linear-gradient(0deg,rgba(132,94,52,.025) 0,rgba(132,94,52,.025) 1px,transparent 1px,transparent 4px)!important;
+  box-shadow:0 28px 76px rgba(0,0,0,.34),inset 0 0 0 8px rgba(255,255,255,.48)!important;
+}
+.rsvp-option-two:before{
+  content:""!important;position:absolute!important;inset:14px!important;
+  border:1px solid rgba(202,151,45,.62)!important;border-radius:20px!important;
+  z-index:0!important;pointer-events:none!important;
+}
+.rsvp-option-two .rsvp-floral{
+  display:block!important;position:absolute!important;z-index:1!important;
+  object-fit:contain!important;opacity:1!important;pointer-events:none!important;
+}
+.rsvp-option-two .rsvp-floral-tl{left:-3px!important;top:-3px!important;width:205px!important;height:160px!important;object-position:left top!important}
+.rsvp-option-two .rsvp-floral-tr{right:-3px!important;top:-3px!important;width:210px!important;height:160px!important;object-position:right top!important}
+.rsvp-option-two .rsvp-floral-bl{left:-3px!important;bottom:-3px!important;width:220px!important;height:205px!important;object-position:left bottom!important}
+.rsvp-option-two .rsvp-floral-br{right:-3px!important;bottom:-3px!important;width:220px!important;height:205px!important;object-position:right bottom!important}
+.rsvp-option-two .rsvp-luxe-header,.rsvp-option-two .rsvp-luxe-form{position:relative!important;z-index:3!important}
+.rsvp-option-two .rsvp-luxe-header{max-width:560px!important;padding:0 28px!important}
+.rsvp-option-two .rsvp-luxe-header h1{font-size:clamp(46px,5.8vw,66px)!important}
+.rsvp-option-two .rsvp-section{background:rgba(255,253,249,.92)!important}
+.rsvp-option-two .rsvp-submit,.rsvp-option-two .rsvp-script{position:relative!important;z-index:4!important}
+
+.adventure-hotspot{position:absolute;z-index:8;display:block;border-radius:12px;cursor:pointer}
+.adventure-hotspot:focus-visible{outline:4px solid #e31b62;outline-offset:3px;background:rgba(255,255,255,.18)}
+/* Saturday right-panel rows in the baked itinerary image. */
+.adventure-bingo-link{left:70.5%;top:25.9%;width:20.5%;height:2.8%}
+.adventure-pickleball-link{left:70.5%;top:30.5%;width:22.5%;height:2.8%}
+
+@media(max-width:760px){
+  .rsvp-option-two{padding:62px 22px 86px!important}
+  .rsvp-option-two .rsvp-floral-tl,.rsvp-option-two .rsvp-floral-tr{width:128px!important;height:112px!important}
+  .rsvp-option-two .rsvp-floral-bl,.rsvp-option-two .rsvp-floral-br{width:138px!important;height:135px!important}
+  .rsvp-option-two .rsvp-luxe-header{padding:0 10px!important}
+}
