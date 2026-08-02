@@ -322,3 +322,11 @@
   }
   .rsvp-option-two .rsvp-luxe-form{padding-bottom:62px!important}
 }
+
+/* v21 landing navigation cleanup */
+.landing-shell{overflow:hidden}
+.landing-nav{position:absolute;z-index:12;top:4.35%;left:26%;width:58%;min-height:3.9%;display:flex;align-items:center;justify-content:center;gap:clamp(12px,2vw,30px);padding:7px 18px;border-radius:999px;background:rgba(255,244,235,.84);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);box-shadow:0 4px 16px rgba(82,35,33,.12);white-space:nowrap}
+.landing-nav a{font:700 clamp(9px,1.05vw,13px)/1 Arial,sans-serif;text-transform:uppercase;letter-spacing:.045em;text-decoration:none;color:#fff;text-shadow:0 1px 5px rgba(58,23,29,.7)}
+.landing-nav a:hover,.landing-nav a:focus-visible{color:#ffe27b;outline:none}
+.rsvp-now-hotspot{left:84.2%;top:2.5%;width:12.8%;height:4.8%}
+@media(max-width:700px){.landing-nav{left:22%;width:64%;gap:8px;padding:5px 8px}.landing-nav a{font-size:7px;letter-spacing:.02em}}
