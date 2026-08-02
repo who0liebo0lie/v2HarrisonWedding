@@ -55,3 +55,35 @@
 .rsvp-script{position:relative;z-index:3;margin:0}
 .aligned-card{position:relative;z-index:3}
 @media(max-width:760px){.rsvp-luxe-header{padding:0 10px}.rsvp-floral{width:115px;height:145px}.action-chip.sat-bingo,.action-chip.sat-pickleball{min-width:auto;font-size:8px;padding:4px 6px}}
+
+/* Version 14: final overlap, itinerary, explore and RSVP fixes */
+/* Landing image is now a single clean asset with one date/location treatment. */
+
+/* Saturday action rows: clear of Sail Away and in chronological order */
+.action-chip.sat-bingo,.action-chip.sat-pickleball{left:68.4%!important;width:29.2%;min-width:0;text-align:left;border-radius:8px;padding:8px 12px;font-size:11px;box-shadow:none;background:#fff8ef}
+.action-chip.sat-bingo{top:37.18%!important}
+.action-chip.sat-pickleball{top:42.05%!important}
+
+/* Replace only the inconsistent Wednesday/Thursday typography panels. */
+.itinerary-fix{position:absolute;z-index:11;background:#f8ead8;color:#42372d;border:1px solid rgba(174,130,78,.28);font-family:Arial,sans-serif;overflow:hidden}
+.itinerary-fix h3{margin:0 0 13px;color:#d81b60;text-transform:uppercase;letter-spacing:.03em;font-size:14px;line-height:1.15}
+.itinerary-fix p{margin:10px 0;font-size:12px;line-height:1.45}.itinerary-fix strong{text-transform:uppercase}.itinerary-fix em{display:block;color:#d81b60;font:italic 16px Georgia,serif;margin-top:5px}.wed-panel{left:65.8%;top:77.78%;width:32.7%;height:9.3%;padding:20px 24px;border-radius:17px 17px 0 0}.wed-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px 18px;font-size:11px}.thu-left{left:14.2%;top:86.95%;width:20.1%;height:10.15%;padding:18px 28px;border-radius:0}.thu-left h3{font:500 27px/1 Georgia,serif;text-transform:none;letter-spacing:0;margin-bottom:4px}.thu-left p{font-size:12px}.thu-right{left:65.8%;top:87.05%;width:32.7%;height:9.95%;padding:20px 24px;border-radius:0}.thu-right p{font-size:12px;margin:8px 0 26px}
+
+/* Explore: fixed title wrapping and clean image fitting */
+.explore-shell .neighborhood-panel{grid-template-columns:33% 67%}
+.explore-shell .neighborhood-copy h2{overflow-wrap:normal;word-break:normal;hyphens:none;font-size:40px;line-height:1.02;letter-spacing:-.02em}
+.explore-shell .neighborhood-panel>img{object-fit:cover;object-position:center;filter:none;image-rendering:auto}
+.explore-shell .venue-cards{grid-template-columns:repeat(4,1fr)}
+.explore-shell .venue-cards article{min-height:132px}
+/* Three Entertainment Place cards after Casino removal */
+.explore-shell .venue-cards:has(article:nth-child(3):last-child){grid-template-columns:repeat(3,1fr)}
+
+/* RSVP: one clean live form, no baked mockup fragments */
+.rsvp-floral{display:none!important}
+.rsvp-luxe-card{overflow:visible;padding:52px 70px 68px;background-image:linear-gradient(rgba(255,249,239,.98),rgba(255,249,239,.98)),repeating-linear-gradient(0deg,rgba(140,105,66,.025) 0,rgba(140,105,66,.025) 1px,transparent 1px,transparent 4px)}
+.rsvp-luxe-card:after{content:"🌺";position:absolute;right:24px;top:20px;font-size:54px;filter:saturate(1.2);z-index:0}.rsvp-luxe-card:before{z-index:0}
+.rsvp-luxe-header,.rsvp-luxe-form{position:relative;z-index:2}
+.rsvp-luxe-header h1{font-size:clamp(42px,5.6vw,62px);line-height:1.02;margin:10px 0}
+.rsvp-luxe-form{padding-bottom:18px}.rsvp-section{position:relative;z-index:2}.rsvp-section textarea{display:block;position:relative;z-index:3;min-height:120px;margin-bottom:0}
+.rsvp-submit{position:relative;display:block;z-index:4;margin:18px auto 0;transform:none}.rsvp-script{position:relative;z-index:4;margin:18px 0 0;padding-bottom:0}.rsvp-confirmation{position:relative;z-index:4}
+@media(max-width:760px){.action-chip.sat-bingo,.action-chip.sat-pickleball{font-size:7px;padding:4px 5px}.itinerary-fix{display:none}.rsvp-luxe-card{padding:44px 22px 52px}.rsvp-luxe-card:after{font-size:38px;right:14px;top:12px}.explore-shell .neighborhood-copy h2{font-size:30px}.explore-shell .venue-cards:has(article:nth-child(3):last-child){grid-template-columns:1fr 1fr}}
