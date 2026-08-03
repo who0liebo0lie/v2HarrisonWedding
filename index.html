@@ -1,4 +1,40 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Julia & Wesley | Harrison Set Sail</title><link rel="stylesheet" href="css/v22.css?v=22"></head><body class="linen-body home-body">
-<section class="welcome-overlay" id="welcome-overlay" aria-labelledby="welcome-title"><div class="welcome-visual"><img src="assets/approved/welcome-v22.png" alt="Welcome to Julia and Wesley's Wedding Adventure"><button class="welcome-close" aria-label="Close welcome">×</button><form id="welcome-form"><label><span>First name</span><input id="welcome-first" required autocomplete="given-name"></label><label><span>Last name</span><input id="welcome-last" required autocomplete="family-name"></label><button type="submit">That’s me!</button></form></div></section>
-<main class="home-page"><picture><source media="(min-width:850px)" srcset="assets/approved/home-wide-v22.png"><img src="assets/approved/home-v22.png" alt="A Love Story, Twenty Years in the Making — Julia and Wesley"></picture><div class="home-footer-fix"><strong>JANUARY 23–28, 2027</strong></div>
-<nav class="image-nav" aria-label="Home page navigation"><a href="our-story.html">Our Story</a><a href="adventure.html">The Adventure</a><a href="explore.html">Explore</a><a href="travel.html">Travel</a><a href="rsvp.html">RSVP</a></nav></main><script src="js/v22.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Julia & Wesley | Harrison Set Sail</title>
+  <link rel="stylesheet" href="css/v23.css?v=23">
+</head>
+<body class="linen-body home-body">
+  <section class="welcome-overlay" id="welcome-overlay" aria-labelledby="welcome-title">
+    <div class="welcome-card" role="dialog" aria-modal="true">
+      <button class="welcome-close" type="button" aria-label="Close welcome">×</button>
+      <div class="welcome-art" aria-hidden="true">
+        <img src="assets/approved/welcome-v22.png" alt="">
+      </div>
+      <form id="welcome-form" class="welcome-form" autocomplete="on">
+        <h1 id="welcome-title" class="sr-only">Welcome to Julia and Wesley's Wedding Adventure</h1>
+        <div class="welcome-fields">
+          <label>First name
+            <input id="welcome-first" name="given-name" type="text" required autocomplete="given-name" inputmode="text" autocapitalize="words">
+          </label>
+          <label>Last name
+            <input id="welcome-last" name="family-name" type="text" required autocomplete="family-name" inputmode="text" autocapitalize="words">
+          </label>
+        </div>
+        <button type="submit" class="welcome-submit">⚓ That’s me!</button>
+      </form>
+    </div>
+  </section>
+
+  <main class="home-page">
+    <img class="home-art" src="assets/approved/home-v22.png" alt="A Love Story, Twenty Years in the Making — Julia and Wesley">
+    <div class="home-date-correction" aria-label="Cruise dates January 23 through 28, 2027">JAN. 23–28, 2027</div>
+    <nav class="image-nav" aria-label="Home page navigation">
+      <a href="index.html?skip=1">Home</a><a href="our-story.html">Our Story</a><a href="adventure.html">The Adventure</a><a href="explore.html">Explore</a><a href="travel.html">Travel</a><a href="rsvp.html">RSVP</a>
+    </nav>
+  </main>
+  <script src="js/v23.js"></script>
+</body>
+</html>
