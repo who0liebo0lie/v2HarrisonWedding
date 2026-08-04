@@ -1,0 +1,39 @@
+Version 28 — Julia & Wesley Wedding Website
+
+This package carries forward the requested rebuilt website details:
+
+HOME / WELCOME
+- Floral welcome gate with Wesley prompting for first name and Julia prompting for last name.
+- Welcome copy begins “It’s finally here!” and confirms “YES—you’re invited!”
+- No opening sparkle or sound sequence.
+- No blue page border.
+- Full-page sky-and-floral hero using approved Julia and Wesley imagery.
+- White hero navigation without a bubble or duplicate navigation text.
+- Cruise footer includes January 23–28, 2027, Harmony of the Seas, Wedding Day at Sea, Sunshine, Love & Adventure, and A Celebration to Remember.
+
+OUR STORY
+- Rebuilt as HTML/CSS on a linen background with matching tropical floral framing.
+- May 28 conversation centered with circular portraits cropped from the approved landing imagery.
+- Russian message appears as “Новый телефон, ты кто?*” with no English translation inside the bubble.
+- English meaning and story continuation appear below the conversation.
+
+EXPLORE
+- Linen background with no blue outer border.
+- Neighborhood controls remain separate from category directories.
+- Dining, Entertainment, Drinks, Relaxation, Evenings, and Explore open a centered, full-screen directory overlay.
+- Overlay closes by X, outside click, or Escape and preserves the page position.
+- Dining opens with eight featured cards, filter tabs, and a Show Every Dining Option control.
+- Removed the old View All Venues in Central Park button.
+
+RSVP
+- Guest-count selector dynamically creates separate stacked guest cards.
+- Each guest has a full name, overall attendance, and separate Welcome Party, Bingo, Pickleball, and Wedding choices.
+- Bingo clue appears only for guests who select Yes to Bingo.
+- Gift card and personalized-link privacy note are included.
+- Linen background with floral framing and no blue side border.
+
+Still pending before launch:
+- Live RSVP and invitation-tracking endpoint.
+- Final RSVP deadline confirmation.
+- Final travel booking/contact links and negotiated rates.
+- Final licensed venue-photo review.
