@@ -1,2 +1,30 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Julia & Wesley</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&family=Libre+Franklin:wght@300;400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/clean-v22.css"></head><body data-page="home"><header class="site-header"><a class="brand" href="index.html?skip=1"><span class="brand-harrison">HARRISON</span><span class="brand-sail">Set Sail</span><span class="brand-anchor">⚓</span></a><button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" class="site-nav" aria-label="Primary navigation"><a href="index.html?skip=1" data-page="home">Home</a><a href="our-story.html" data-page="story">Our Story</a><a href="adventure.html" data-page="adventure">The Adventure</a><a href="explore.html" data-page="explore">Explore</a><a href="travel.html" data-page="travel">Travel</a><a href="rsvp.html" data-page="rsvp">RSVP</a></nav></header><div class="welcome-overlay" id="welcome-overlay"><section class="welcome-modal" role="dialog" aria-modal="true" aria-labelledby="welcome-title"><button class="welcome-close" type="button" aria-label="Close welcome">×</button><div class="welcome-floral welcome-floral-left"></div><div class="welcome-floral welcome-floral-right"></div><h1 id="welcome-title">Welcome to Julia &amp; Wesley’s <span>Wedding Adventure</span></h1><p>We’re so excited to share all the details for our wedding adventure. Including answering all questions along the way.</p><h2>Yes!! You’re invited.</h2><form id="welcome-form" autocomplete="off"><label>First name<input name="firstName" autocomplete="given-name" required></label><label>Last name<input name="lastName" autocomplete="family-name" required></label><button type="submit">That’s Me!</button></form><p class="welcome-confirm">We’re so excited that you’re here!</p></section></div>
-<main class="home-page"><section class="hero"><div class="hero-copy"><p class="hero-meta">January 26, 2027 <span>⚓</span> Nassau, Bahamas</p><h1>A Love Story</h1><p class="hero-script">Twenty Years<br>In the Making</p></div><div class="sail-copy">We can’t wait to <span>Set Sail</span> with you<small>Scroll to begin ↓</small></div></section><section class="home-facts"><div class="fact"><span>▣</span><strong>January 23–28, 2027</strong></div><div class="fact"><span>🚢</span><strong>Harmony of the Seas</strong></div><div class="fact"><span>♡</span><strong>Wedding Day at Sea</strong></div><div class="fact"><span>🌴</span><strong>Sunshine, Love &amp; Adventure</strong></div><div class="fact"><span>🍸</span><strong>A Celebration to Remember</strong></div></section></main><script src="js/shared-v22.js"></script></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Julia & Wesley</title><link rel="stylesheet" href="css/site.css?v=21"></head><body>
+<section class="welcome-gate" id="welcome-gate" aria-labelledby="welcome-title">
+  <div class="welcome-card">
+    <div class="welcome-anchor">⚓</div>
+    <p class="eyebrow">Julia & Wesley</p>
+    <h1 id="welcome-title">Welcome aboard</h1>
+    <p>Please enter your first and last name to open your invitation.</p>
+    <form id="welcome-form">
+      <label>First name<input id="first-name" name="firstName" autocomplete="given-name" required></label>
+      <label>Last name<input id="last-name" name="lastName" autocomplete="family-name" required></label>
+      <button type="submit">Confirm guest</button>
+    </form>
+    <p class="welcome-error" id="welcome-error" aria-live="polite"></p>
+  </div>
+</section>
+<section class="intro" id="intro" aria-label="Cinematic introduction" hidden>
+  <div class="intro-layer intro-garden"></div><div class="intro-layer intro-glow"></div><div class="sparkles" aria-hidden="true"></div><div class="intro-layer intro-final"></div>
+  <div class="intro-welcome" id="intro-welcome"></div>
+  <button class="sound" type="button">Sound on</button><button class="skip" type="button">Skip intro</button><audio id="intro-audio" loop src="assets/audio/intro.wav"></audio>
+</section>
+<main class="page-shell landing-shell"><img class="approved-page" src="assets/approved/landing-page.png" alt="Julia and Wesley wedding invitation landing page">
+<nav class="landing-nav" aria-label="Main navigation">
+  <a href="our-story.html">Our Story</a>
+  <a href="adventure.html">The Adventure</a>
+  <a href="explore.html">Explore</a>
+  <a href="travel.html">Travel</a>
+  <a href="rsvp.html">RSVP</a>
+</nav>
+<a class="hotspot rsvp-now-hotspot" aria-label="RSVP now" href="rsvp.html"></a>
+</main><script src="js/intro.js"></script></body></html>
