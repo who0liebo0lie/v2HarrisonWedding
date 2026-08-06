@@ -14,7 +14,7 @@
     pool: {
       title: 'Pool Deck',
       desc: 'Sunshine, waterslides, whirlpools, the Solarium, and easy grab-and-go food make the Pool Deck the all-day energy center for sea days.',
-      image: 'assets/v29/solarium.svg',
+      image: 'assets/neighborhoods/pool-deck.jpg',
       venues: [
         { tag: 'Included', name: 'El Loco Fresh', desc: 'Tacos, burritos, and pool-day fuel without leaving the deck.' },
         { tag: 'Included', name: 'Solarium Bistro', desc: 'Casual bites with a calmer adults-only atmosphere nearby.' },
@@ -36,7 +36,7 @@
     spa: {
       title: 'Vitality Spa',
       desc: 'A quieter zone for treatments, salon time, workouts, and a quick reset whenever you want your day to feel a little more restorative.',
-      image: 'assets/v29/fitness.svg',
+      image: 'assets/neighborhoods/vitality-spa.jpg',
       venues: [
         { tag: 'Specialty', name: 'Vitality Spa', desc: 'Massages, facials, and spa treatments.' },
         { tag: 'Included', name: 'Fitness Center', desc: 'Ocean-view workouts and exercise classes.' },
@@ -127,7 +127,7 @@
         { name: 'Trellis Bar', sentence: 'A charming Central Park stop for cocktails beneath the trees.', neighborhood: 'Central Park', label: 'Specialty · Cocktails', filterTags: ['Specialty', 'Cocktails'], section: 'Cocktails', image: 'assets/neighborhoods/central-park.jpg', neighborhoodKey: 'central' },
         { name: 'Schooner Bar', sentence: 'A classic cruise favorite with lounge seating and a social feel.', neighborhood: 'Royal Promenade', label: 'Specialty · Cocktails', filterTags: ['Specialty', 'Cocktails', 'Late Night'], section: 'Cocktails', image: 'assets/neighborhoods/promenade.jpg', neighborhoodKey: 'promenade' },
         { name: 'Café Promenade', sentence: 'Coffee, tea, pastries, and a dependable caffeine reset.', neighborhood: 'Royal Promenade', label: 'Included · Coffee & Tea', filterTags: ['Included', 'Coffee & Tea'], section: 'Coffee & Tea', image: 'assets/rebuilt/cafe_promenade.jpg', neighborhoodKey: 'promenade' },
-        { name: 'Pool Bars', sentence: 'Frozen drinks and sunshine in a cup.', neighborhood: 'Pool Deck', label: 'Specialty · Cocktails', filterTags: ['Specialty', 'Cocktails'], section: 'Cocktails', image: 'assets/v29/solarium.svg', neighborhoodKey: 'pool' },
+        { name: 'Pool Bars', sentence: 'Frozen drinks and sunshine in a cup.', neighborhood: 'Pool Deck', label: 'Specialty · Cocktails', filterTags: ['Specialty', 'Cocktails'], section: 'Cocktails', image: 'assets/neighborhoods/pool-deck.jpg', neighborhoodKey: 'pool' },
       ],
     },
     Relaxation: {
@@ -137,7 +137,7 @@
       items: [
         { name: 'Vitality Spa', sentence: 'Massages, facials, and a full “turn my brain off” moment.', neighborhood: 'Vitality Spa', label: 'Specialty · Spa', filterTags: ['Specialty', 'Spa'], section: 'Spa', image: 'assets/neighborhoods/vitality-spa.jpg', neighborhoodKey: 'spa' },
         { name: 'Fitness Center', sentence: 'Ocean-view workouts for anyone who likes to balance vacation with movement.', neighborhood: 'Vitality Spa', label: 'Included · Fitness', filterTags: ['Included', 'Fitness'], section: 'Fitness', image: 'assets/neighborhoods/vitality-spa.jpg', neighborhoodKey: 'spa' },
-        { name: 'Solarium', sentence: 'Adults-only calm with pools, loungers, and a slower pace.', neighborhood: 'Pool Deck', label: 'Included · Pools · Quiet Spaces', filterTags: ['Included', 'Pools', 'Quiet Spaces'], section: 'Quiet Spaces', image: 'assets/v29/solarium.svg', neighborhoodKey: 'pool' },
+        { name: 'Solarium', sentence: 'Adults-only calm with pools, loungers, and a slower pace.', neighborhood: 'Pool Deck', label: 'Included · Pools · Quiet Spaces', filterTags: ['Included', 'Pools', 'Quiet Spaces'], section: 'Quiet Spaces', image: 'assets/neighborhoods/pool-deck.jpg', neighborhoodKey: 'pool' },
         { name: 'Central Park Seating', sentence: 'A peaceful corner to walk, sit, or let the ship feel surprisingly still.', neighborhood: 'Central Park', label: 'Included · Quiet Spaces', filterTags: ['Included', 'Quiet Spaces'], section: 'Quiet Spaces', image: 'assets/neighborhoods/central-park.jpg', neighborhoodKey: 'central' },
       ],
     },
@@ -160,7 +160,7 @@
         { name: 'Central Park', sentence: 'A garden neighborhood with dining, cocktails, and one of the prettiest walks on the ship.', neighborhood: 'Central Park', label: 'Included · Neighborhoods', filterTags: ['Included', 'Neighborhoods'], section: 'Neighborhoods', image: 'assets/neighborhoods/central-park.jpg', neighborhoodKey: 'central' },
         { name: 'Boardwalk', sentence: 'Classic cruise fun, family energy, and the AquaTheater all in one place.', neighborhood: 'Boardwalk', label: 'Included · Family', filterTags: ['Included', 'Family'], section: 'Neighborhoods', image: 'assets/neighborhoods/boardwalk.jpg', neighborhoodKey: 'boardwalk' },
         { name: 'Royal Promenade', sentence: 'Great for wandering, snacking, shopping, and seeing what you bump into next.', neighborhood: 'Royal Promenade', label: 'Included · Activities', filterTags: ['Included', 'Activities'], section: 'Activities', image: 'assets/neighborhoods/promenade.jpg', neighborhoodKey: 'promenade' },
-        { name: 'Perfect Storm', sentence: 'For anyone in the group who hears “waterslide” and immediately says yes.', neighborhood: 'Pool Deck', label: 'Included · Adventure', filterTags: ['Included', 'Adventure'], section: 'Adventure', image: 'assets/v29/solarium.svg', neighborhoodKey: 'pool' },
+        { name: 'Perfect Storm', sentence: 'For anyone in the group who hears “waterslide” and immediately says yes.', neighborhood: 'Pool Deck', label: 'Included · Adventure', filterTags: ['Included', 'Adventure'], section: 'Adventure', image: 'assets/neighborhoods/pool-deck.jpg', neighborhoodKey: 'pool' },
       ],
     },
   };
