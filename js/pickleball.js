@@ -1,0 +1,1 @@
+(()=>{const form=document.querySelector('#pickleball-form');form.addEventListener('submit',e=>{e.preventDefault();const data=Object.fromEntries(new FormData(form));submitWeddingForm('pickleball',data,form.querySelector('.form-status'))})})();
