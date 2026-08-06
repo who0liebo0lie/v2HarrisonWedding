@@ -1,80 +1,46 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Bingo | Harrison Set Sail</title>
-<link rel="stylesheet" href="css/site.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bingo | Julia & Wesley</title>
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;600;700&family=Libre+Franklin:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="site-header" aria-label="Primary">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <span class="brand-stack"><span class="brand-title">Harrison</span><span class="brand-script">Set Sail</span></span>
-        <span class="brand-anchor">⚓</span>
-      </a>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">☰</button>
-      <nav class="main-nav" id="main-nav">
-        <a href="our-story.html">Our Story</a>
-        <a class="active" href="adventure.html">The Adventure</a>
-        <a href="explore.html">Explore the Ship</a>
-        <a href="travel.html">Travel Info</a>
-        <a href="rsvp.html">RSVP</a>
-      </nav>
-    </div>
+  <header class="site-header">
+    <a href="index.html" class="header-logo">HARRISON <span>Set Sail</span> ⚓</a>
+    <button class="nav-toggle" aria-label="Toggle Navigation">☰</button>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="our-story.html">OUR STORY</a></li>
+        <li><a href="adventure.html" class="active">THE ADVENTURE</a></li>
+        <li><a href="explore.html">EXPLORE THE SHIP</a></li>
+        <li><a href="travel.html">TRAVEL INFO</a></li>
+        <li><a href="rsvp.html">RSVP</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="page-content">
-    <section class="panel">
-      <p class="center" style="letter-spacing:.2em;text-transform:uppercase;color:var(--olive);font-size:.85rem;">Virtual game</p>
-      <h1 class="title">B I N G O</h1>
-      <p class="subtitle">Get to know. Laugh a lot. Win big.</p>
-      <p class="center" style="max-width:520px;margin:0 auto 26px;color:var(--ink-soft);">Meet new people. Learn amazing things. See if you can match every story to the right guest!</p>
+  <main class="container">
+    <div class="text-center" style="margin-bottom:2rem;">
+      <p class="script-accent">Virtual Game</p>
+      <h1>Wedding Guest Bingo</h1>
+      <p>Get to know each other during our 5-day celebration!</p>
+    </div>
 
-      <div class="data-note">
-        <strong>How this page gets populated:</strong> guests submit a fun fact when they RSVP and opt in to Bingo (see the RSVP page). Those facts are collected in <code>data/bingo-facts.json</code> — Julia builds the live bingo card by copying facts from that file (or the linked spreadsheet, if you prefer to manage it there) into the card grid below before the cruise sets sail. Full steps are in <code>BINGO-SETUP.md</code>.
-      </div>
-
-      <h2 style="font-family:var(--font-display);color:var(--bougainvillea);">How it works</h2>
-      <div class="card-grid">
-        <div class="info-card"><h3>1. RSVP</h3><p>RSVP to the cruise and opt in to Bingo — you're in!</p></div>
-        <div class="info-card"><h3>2. Share a fun fact</h3><p>Everyone submits one surprising or funny fact about themselves.</p></div>
-        <div class="info-card"><h3>3. Your bingo card</h3><p>As facts come in, you'll get your very own digital bingo card.</p></div>
-        <div class="info-card"><h3>4. The game begins</h3><p>Once we set sail, the game goes live.</p></div>
-        <div class="info-card"><h3>5. Match, connect, win</h3><p>Match facts to the right people, climb the leaderboard, and earn bragging rights.</p></div>
-      </div>
-
-      <h2 style="font-family:var(--font-display);color:var(--bougainvillea);">Your bingo card</h2>
-      <p style="color:var(--ink-soft);">Match each fact to the right person. The card below fills in automatically once guest facts are collected — this is a placeholder layout.</p>
-      <table style="width:100%;border-collapse:collapse;margin:16px 0;">
-        <tr>
-          <td style="border:1px solid var(--border);padding:14px;text-align:center;">Has climbed a mountain</td>
-          <td style="border:1px solid var(--border);padding:14px;text-align:center;">Loves karaoke</td>
-          <td style="border:1px solid var(--border);padding:14px;text-align:center;">Speaks 3+ languages</td>
-          <td style="border:1px solid var(--border);padding:14px;text-align:center;">Has been on safari</td>
-          <td style="border:1px solid var(--border);padding:14px;text-align:center;">Plays an instrument</td>
-        </tr>
-        <tr>
-          <td style="border:1px solid var(--border);padding:14px;text-align:center;">Is celebrating a birthday</td>
-          <td style="border:1px solid var(--border);padding:14px;text-align:center;">Has known Julia &amp; Wesley 20+ years</td>
-          <td style="border:1px solid var(--border);padding:14px;text-align:center;">Owns a dog</td>
-          <td style="border:1px solid var(--border);padding:14px;text-align:center;">Has traveled to Antarctica</td>
-          <td style="border:1px solid var(--border);padding:14px;text-align:center;">Loves spicy food</td>
-        </tr>
-        <tr>
-          <td style="border:1px solid var(--border);padding:14px;text-align:center;">Has gone skydiving</td>
-          <td style="border:1px solid var(--border);padding:14px;text-align:center;">Is a morning person</td>
-          <td style="border:1px solid var(--border);padding:14px;text-align:center;background:var(--linen-dark);font-weight:700;">FREE SPACE</td>
-          <td style="border:1px solid var(--border);padding:14px;text-align:center;">Collects something unique</td>
-          <td style="border:1px solid var(--border);padding:14px;text-align:center;">Has run a marathon</td>
-        </tr>
-      </table>
-
-      <h2 style="font-family:var(--font-display);color:var(--bougainvillea);">Leaderboard</h2>
-      <p style="color:var(--ink-soft);">Standings go live once the game begins — check back during the cruise!</p>
-    </section>
+    <div class="card">
+      <h2>How It Works</h2>
+      <ol style="margin-left:1.5rem; margin-top:1rem;">
+        <li>Submit your fun fact via RSVP.</li>
+        <li>Receive your digital bingo card onboard.</li>
+        <li>Match facts to guests, guess, and climb the leaderboard!</li>
+      </ol>
+    </div>
   </main>
 
-  <script src="js/nav.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/bingo.js"></script>
 </body>
 </html>

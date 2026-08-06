@@ -1,129 +1,82 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Adventure | Harrison Set Sail</title>
-<link rel="stylesheet" href="css/site.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Adventure | Julia & Wesley</title>
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;600;700&family=Libre+Franklin:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="site-header" aria-label="Primary">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <span class="brand-stack"><span class="brand-title">Harrison</span><span class="brand-script">Set Sail</span></span>
-        <span class="brand-anchor">⚓</span>
-      </a>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">☰</button>
-      <nav class="main-nav" id="main-nav">
-        <a href="our-story.html">Our Story</a>
-        <a class="active" href="adventure.html">The Adventure</a>
-        <a href="explore.html">Explore the Ship</a>
-        <a href="travel.html">Travel Info</a>
-        <a href="rsvp.html">RSVP</a>
-      </nav>
-    </div>
+  <header class="site-header">
+    <a href="index.html" class="header-logo">HARRISON <span>Set Sail</span> ⚓</a>
+    <button class="nav-toggle" aria-label="Toggle Navigation">☰</button>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="our-story.html">OUR STORY</a></li>
+        <li><a href="adventure.html" class="active">THE ADVENTURE</a></li>
+        <li><a href="explore.html">EXPLORE THE SHIP</a></li>
+        <li><a href="travel.html">TRAVEL INFO</a></li>
+        <li><a href="rsvp.html">RSVP</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="page-content">
-    <section class="panel route-hero">
-      <h1 class="title">The Adventure <span class="accent">Awaits</span></h1>
-      <p class="center" style="font-weight:600;color:var(--magenta);">January 23 – January 28, 2027</p>
-      <p class="center" style="color:var(--ink-soft);">Six unforgettable days. One incredible celebration. Countless memories.</p>
-    </section>
+  <main class="container">
+    <div class="itinerary-header text-center" style="margin-bottom:2rem;">
+      <h1>The Adventure Awaits</h1>
+      <p style="letter-spacing:2px; font-weight:600; color:var(--color-bougainvillea);">JANUARY 23 – JANUARY 28, 2027</p>
+    </div>
 
-    <section class="itinerary" style="margin-top:26px;">
-
-      <article class="day">
-        <div class="daylabel"><span>Sat</span><h3>Jan 23</h3></div>
-        <div>
-          <h2>Embark &amp; White Party</h2>
-          <p>Board the ship, settle in, and get ready to sail away. The celebration starts tonight.</p>
-          <a class="detail-link" href="bingo.html">Bingo Game Begins →</a>&nbsp; &nbsp;
-          <a class="detail-link" href="pickleball.html">Pickleball Open Registration →</a>
-        </div>
-        <ul class="day-schedule">
-          <li><b>12:00 PM</b> — Board the Ship</li>
-          <li><b>4:00 PM</b> — Ship Departure — <a href="bingo.html">Bingo begins →</a></li>
-          <li><b>7:00 PM</b> — White Party <em>(dress in white)</em></li>
-          <li><b>8:00 PM</b> — <a href="pickleball.html">Pickleball Open Registration →</a></li>
+    <div class="itinerary-list">
+      <div class="card itinerary-card">
+        <h3>SAT JAN 23 — Embark & White Party</h3>
+        <ul style="margin-left:1.5rem; margin-top:0.5rem;">
+          <li>12:00 PM — Board the Ship</li>
+          <li>4:00 PM — Ship Departure</li>
+          <li>6:00 PM — <a href="bingo.html">Bingo Registration & Kickoff</a></li>
+          <li>7:00 PM — White Party (Dress in white!)</li>
+          <li>8:00 PM — <a href="pickleball.html">Pickleball Tournament Open</a></li>
         </ul>
-      </article>
+      </div>
 
-      <article class="day">
-        <div class="daylabel"><span>Sun</span><h3>Jan 24</h3></div>
-        <div>
-          <h2>At Sea</h2>
-          <p>A full day to relax, explore the ship, and do it all.</p>
-        </div>
-        <div class="day-tags">
-          <span>Spa &amp; Wellness</span><span>Pool &amp; Hot Tubs</span><span>Shows &amp; Live Music</span>
-          <span>Shopping</span><span>FlowRider Surfing</span><span>Art Gallery</span>
-          <span>Rock Climbing</span><span>Game Room</span>
-        </div>
-      </article>
+      <div class="card itinerary-card">
+        <h3>SUN JAN 24 — At Sea</h3>
+        <p style="margin-top:0.5rem;">A day to relax and do it all. FlowRider, Spa, Shows & Live Music!</p>
+      </div>
 
-      <article class="day">
-        <div class="daylabel"><span>Mon</span><h3>Jan 25</h3></div>
-        <div>
-          <h2>Perfect Day at CocoCay</h2>
-          <p>Beach time, island adventures, and warm Caribbean sunshine.</p>
-          <a class="detail-link" href="cococay.html">View CocoCay Details →</a>
-        </div>
-        <ul class="day-schedule">
-          <li>Beach time</li>
-          <li>Thrill Waterpark</li>
-          <li>Float in the world's largest freshwater pool</li>
-          <li><a href="cococay.html">View Details →</a></li>
-        </ul>
-      </article>
+      <div class="card itinerary-card">
+        <h3>MON JAN 25 — CocoCay</h3>
+        <p style="margin-top:0.5rem;">Perfect Day at CocoCay, Bahamas.</p>
+        <a href="cococay.html" class="btn-primary" style="margin-top:1rem;">View Details</a>
+      </div>
 
-      <article class="day">
-        <div class="daylabel"><span>Tue</span><h3>Jan 26</h3></div>
-        <div>
-          <h2>Wedding Day at Sea</h2>
-          <p>A very good reason to wake up early.</p>
-          <a class="detail-link" href="wedding-day.html">View Wedding Day Details →</a>
-        </div>
-        <ul class="day-schedule">
-          <li class="highlight"><b>10:00 AM</b> — Sunrise Sparkle Wedding Ceremony</li>
-          <li>For all the details on attire, colors, and more, visit our Style Guide.</li>
-          <li><a href="wedding-day.html">View Details →</a></li>
-        </ul>
-      </article>
+      <div class="card itinerary-card">
+        <h3>TUE JAN 26 — Wedding Day</h3>
+        <p style="margin-top:0.5rem;">A Very Good Reason to Wake Up Early! 10:00 AM Ceremony.</p>
+        <a href="wedding-day.html" class="btn-primary" style="margin-top:1rem;">View Details</a>
+      </div>
 
-      <article class="day">
-        <div class="daylabel"><span>Wed</span><h3>Jan 27</h3></div>
-        <div>
-          <h2>At Sea &amp; Pickleball Finals</h2>
-          <p>One more day for favorite ship activities and the final bracket.</p>
-        </div>
-        <ul class="day-schedule">
-          <li>Spa &amp; Wellness</li>
-          <li>Shows &amp; Live Music</li>
-          <li>FlowRider Surfing</li>
-          <li>Rock Climbing</li>
-          <li class="highlight"><b>8:00 PM</b> — Pickleball Finals</li>
-        </ul>
-      </article>
+      <div class="card itinerary-card">
+        <h3>WED JAN 27 — At Sea</h3>
+        <p style="color:var(--color-bougainvillea); font-weight:bold; font-size:1.2rem; margin:0.5rem 0;">
+          8:00 PM — Pickleball Finals
+        </p>
+        <p>Spa & Wellness, FlowRider, Live Shows, Rock Climbing.</p>
+      </div>
 
-      <article class="day">
-        <div class="daylabel"><span>Thu</span><h3>Jan 28</h3></div>
-        <div>
-          <h2>Return Home</h2>
-          <p>Enjoy a final breakfast together before we return home with hearts full.</p>
-        </div>
-        <ul class="day-schedule">
-          <li>Enjoy breakfast</li>
+      <div class="card itinerary-card">
+        <h3>THU JAN 28 — Return Home</h3>
+        <ul style="margin-left:1.5rem; margin-top:0.5rem;">
+          <li>Enjoy Breakfast</li>
           <li>Disembark</li>
-          <li>Safe travels home</li>
+          <li>Safe Travels Home</li>
         </ul>
-      </article>
-
-    </section>
-
-    <p class="center" style="margin-top:40px;font-family:var(--font-script);font-size:1.5rem;color:var(--olive);">The best things in life are shared. We can't wait for this adventure with you. ⚓</p>
+      </div>
+    </div>
   </main>
 
-  <script src="js/nav.js"></script>
+  <script src="js/navigation.js"></script>
 </body>
 </html>

@@ -1,21 +1,41 @@
-document.addEventListener('DOMContentLoaded', function () {
-  var items = document.querySelectorAll('.faq-item');
+const travelLinks = {
+  booking: "#coming-soon",
+  email: "mailto:info@alignedjourneys.com",
+  phone: "tel:+18005550199",
+  royalCaribbeanShip: "https://www.royalcaribbean.com/cruise-ships/harmony-of-the-seas"
+};
 
-  function closeAll() {
-    items.forEach(function (i) { i.classList.remove('open'); });
-  }
-
-  items.forEach(function (item) {
-    var q = item.querySelector('.faq-q');
-    q.addEventListener('click', function (e) {
-      e.stopPropagation();
-      var wasOpen = item.classList.contains('open');
-      closeAll();
-      if (!wasOpen) item.classList.add('open');
+document.addEventListener('DOMContentLoaded', () => {
+  const bookingBtns = document.querySelectorAll('.cta-booking');
+  bookingBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert("Booking Portal Opening Soon! Please contact our travel advisor directly via phone or email in the interim.");
     });
   });
 
-  document.addEventListener('click', function (e) {
-    if (!e.target.closest('.faq-item')) closeAll();
+  const faqButtons = document.querySelectorAll('.faq-question-btn');
+  faqButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const answer = button.nextElementSibling;
+      const isOpen = answer.classList.contains('open');
+
+      document.querySelectorAll('.faq-answer').forEach(ans => ans.classList.remove('open'));
+
+      if (!isOpen) {
+        answer.classList.add('open');
+      }
+    });
+  });
+
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.faq-answer').forEach(ans => ans.classList.remove('open'));
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.faq-answer').forEach(ans => ans.classList.remove('open'));
+    }
   });
 });

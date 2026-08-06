@@ -1,93 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Dink Before I Do | Harrison Set Sail</title>
-<link rel="stylesheet" href="css/site.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pickleball | Julia & Wesley</title>
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;600;700&family=Libre+Franklin:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="site-header" aria-label="Primary">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <span class="brand-stack"><span class="brand-title">Harrison</span><span class="brand-script">Set Sail</span></span>
-        <span class="brand-anchor">⚓</span>
-      </a>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">☰</button>
-      <nav class="main-nav" id="main-nav">
-        <a href="our-story.html">Our Story</a>
-        <a class="active" href="adventure.html">The Adventure</a>
-        <a href="explore.html">Explore the Ship</a>
-        <a href="travel.html">Travel Info</a>
-        <a href="rsvp.html">RSVP</a>
-      </nav>
-    </div>
+  <header class="site-header">
+    <a href="index.html" class="header-logo">HARRISON <span>Set Sail</span> ⚓</a>
+    <button class="nav-toggle" aria-label="Toggle Navigation">☰</button>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="our-story.html">OUR STORY</a></li>
+        <li><a href="adventure.html" class="active">THE ADVENTURE</a></li>
+        <li><a href="explore.html">EXPLORE THE SHIP</a></li>
+        <li><a href="travel.html">TRAVEL INFO</a></li>
+        <li><a href="rsvp.html">RSVP</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="page-content">
-    <section class="panel">
-      <h1 class="title">The Dink Before <span class="accent">"I Do"</span></h1>
-      <p class="subtitle" style="font-family:var(--font-body);font-weight:600;color:var(--ink-soft);font-size:1rem;">Julia &amp; Wesley's Wedding Pickleball Tournament</p>
-      <p class="center" style="max-width:560px;margin:0 auto 26px;color:var(--ink-soft);">Doubles tournament · Open registration Saturday, 8:00 PM · Finals Wednesday, 8:00 PM. Whether you're chasing the championship, making new friends, or enjoying the laughs from the sidelines, everyone's invited.</p>
+  <main class="container">
+    <div class="text-center" style="margin-bottom:2rem;">
+      <h1>The Dink Before “I Do”</h1>
+      <p class="script-accent">Julia & Wesley's Pickleball Tournament</p>
+    </div>
 
-      <div class="data-note">
-        <strong>How this page gets populated:</strong> registrations submitted below are captured in <code>data/pickleball-registrations.json</code> (or a linked spreadsheet). Julia builds the bracket from that list before finals — steps are documented in <code>PICKLEBALL-SETUP.md</code>.
-      </div>
-
-      <h2 style="font-family:var(--font-display);color:var(--bougainvillea);">Claim your spot</h2>
-      <form id="pickle-form">
-        <div class="event-grid">
-          <div class="field">
-            <label for="reg-type">Registration type</label>
-            <select id="reg-type">
-              <option value="team">Register as a team</option>
-              <option value="solo">Register as a solo player</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="reg-name">Your name</label>
-            <input id="reg-name" required>
-          </div>
-        </div>
-        <div id="team-fields" class="event-grid">
-          <div class="field"><label for="teammate">Teammate name</label><input id="teammate"></div>
-          <div class="field"><label for="teamname">Team name</label><input id="teamname"></div>
-        </div>
-        <div id="solo-note" hidden class="info-card"><p>We'll pair you with another solo player before the tournament.</p></div>
-        <button class="btn" type="submit">Submit registration</button>
-        <p id="pickle-status" style="margin-top:10px;color:var(--ink-soft);"></p>
-      </form>
-
-      <h2 style="font-family:var(--font-display);color:var(--bougainvillea);margin-top:34px;">Tournament timeline</h2>
-      <ul class="day-schedule">
-        <li><b>Saturday, Jan 23, 8:00 PM</b> — Open registration</li>
-        <li><b>Wednesday, Jan 27, 8:00 PM</b> — Finals: quarterfinals, semifinals, finals, awards</li>
-      </ul>
-    </section>
+    <div class="card">
+      <h2>Registration</h2>
+      <p>Sign up as a team or request a partner through your RSVP form!</p>
+    </div>
   </main>
 
-  <script src="js/nav.js"></script>
-  <script>
-    var t = document.getElementById('reg-type'), team = document.getElementById('team-fields'), solo = document.getElementById('solo-note');
-    t.addEventListener('change', function () {
-      team.hidden = t.value === 'solo';
-      solo.hidden = t.value !== 'solo';
-    });
-    document.getElementById('pickle-form').addEventListener('submit', function (e) {
-      e.preventDefault();
-      var entry = {
-        name: document.getElementById('reg-name').value,
-        type: t.value,
-        teammate: document.getElementById('teammate').value,
-        teamName: document.getElementById('teamname').value,
-        submittedAt: new Date().toISOString()
-      };
-      var existing = JSON.parse(localStorage.getItem('pickleballRegistrations') || '[]');
-      existing.push(entry);
-      localStorage.setItem('pickleballRegistrations', JSON.stringify(existing));
-      document.getElementById('pickle-status').textContent = 'Registration saved on this device for now — this will be wired to a shared list before launch.';
-      e.target.reset();
-    });
-  </script>
+  <script src="js/navigation.js"></script>
+  <script src="js/pickleball.js"></script>
 </body>
 </html>

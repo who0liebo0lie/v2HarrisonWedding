@@ -1,82 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Explore the Ship | Harrison Set Sail</title>
-<link rel="stylesheet" href="css/site.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore the Ship | Julia & Wesley</title>
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;600;700&family=Libre+Franklin:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="site-header" aria-label="Primary">
-    <div class="container header-inner">
-      <a class="brand" href="index.html">
-        <span class="brand-stack"><span class="brand-title">Harrison</span><span class="brand-script">Set Sail</span></span>
-        <span class="brand-anchor">⚓</span>
-      </a>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">☰</button>
-      <nav class="main-nav" id="main-nav">
-        <a href="our-story.html">Our Story</a>
-        <a href="adventure.html">The Adventure</a>
-        <a class="active" href="explore.html">Explore the Ship</a>
-        <a href="travel.html">Travel Info</a>
-        <a href="rsvp.html">RSVP</a>
-      </nav>
-    </div>
+  <header class="site-header">
+    <a href="index.html" class="header-logo">HARRISON <span>Set Sail</span> ⚓</a>
+    <button class="nav-toggle" aria-label="Toggle Navigation">☰</button>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="our-story.html">OUR STORY</a></li>
+        <li><a href="adventure.html">THE ADVENTURE</a></li>
+        <li><a href="explore.html" class="active">EXPLORE THE SHIP</a></li>
+        <li><a href="travel.html">TRAVEL INFO</a></li>
+        <li><a href="rsvp.html">RSVP</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="page-content">
-    <h1 class="title">Explore <span class="accent">the Ship</span></h1>
-    <p class="center" style="color:var(--ink-soft);max-width:560px;margin:0 auto 24px;">Tap a neighborhood on Harmony of the Seas to update the guide below, or open a category tile for the full directory.</p>
-
-    <section class="ship-zone">
-      <p class="center" style="color:var(--ink-soft);font-size:.9rem;">Tap a neighborhood on the ship to explore</p>
-      <div class="ship-map-wrap">
-        <img src="assets/approved/ship-map-crop.jpg" alt="Aerial ship map of Harmony of the Seas">
-        <button class="neighborhood-btn" style="left:12%;top:20%;" data-neighborhood="pool">Pool Deck</button>
-        <button class="neighborhood-btn active" style="left:35%;top:14%;" data-neighborhood="central">Central Park</button>
-        <button class="neighborhood-btn" style="left:58%;top:16%;" data-neighborhood="entertainment">Entertainment Place</button>
-        <button class="neighborhood-btn" style="left:82%;top:30%;" data-neighborhood="spa">Vitality Spa</button>
-        <button class="neighborhood-btn" style="left:18%;top:78%;" data-neighborhood="boardwalk">Boardwalk</button>
-        <button class="neighborhood-btn" style="left:40%;top:82%;" data-neighborhood="promenade">Royal Promenade</button>
-        <button class="neighborhood-btn" style="left:62%;top:78%;" data-neighborhood="youth">Youth Zone</button>
-      </div>
-    </section>
-
-    <section class="category-row" aria-label="Explore categories">
-      <button class="category-tile" data-category="dining">🍽️ Dining</button>
-      <button class="category-tile" data-category="entertainment">🎭 Entertainment</button>
-      <button class="category-tile" data-category="drinks">🍸 Drinks</button>
-      <button class="category-tile" data-category="relaxation">🪷 Relaxation</button>
-      <button class="category-tile" data-category="evenings">🌙 Evenings</button>
-      <button class="category-tile" data-category="explore">🧭 Explore</button>
-    </section>
-
-    <section class="guide-grid" aria-live="polite">
-      <div>
-        <p style="text-transform:uppercase;letter-spacing:.15em;font-size:.8rem;color:var(--olive);margin:0;">Neighborhood guide</p>
-        <h2 id="guide-title" style="font-family:var(--font-display);font-size:2rem;margin:4px 0 10px;color:var(--bougainvillea);">Central Park</h2>
-        <p id="guide-desc" style="color:var(--ink-soft);"></p>
-        <div class="highlight-tiles" id="guide-tiles"></div>
-      </div>
-      <img class="guide-main-photo" id="guide-image" src="assets/neighborhoods/central-park.jpg" alt="Central Park on Harmony of the Seas">
-    </section>
+  <main class="container">
+    <div class="text-center" style="margin-bottom:2rem;">
+      <h1>Explore Harmony of the Seas</h1>
+      <p>Discover neighborhoods, dining, and live entertainment onboard.</p>
+    </div>
   </main>
 
-  <div class="modal-backdrop" id="category-backdrop" aria-hidden="true">
-    <div class="category-modal" id="category-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <button class="modal-close" type="button" id="modal-close" aria-label="Close">×</button>
-      <h2 id="modal-title" style="font-family:var(--font-display);color:var(--bougainvillea);"></h2>
-      <p id="modal-intro" style="color:var(--ink-soft);"></p>
-      <div class="modal-tabs">
-        <button class="modal-tab-btn active" data-tab="included">What's Included</button>
-        <button class="modal-tab-btn" data-tab="notincluded">What's Not Included</button>
-      </div>
-      <div class="modal-tab-panel active" id="tab-included"><ul class="included-list" id="included-items"></ul></div>
-      <div class="modal-tab-panel" id="tab-notincluded"><ul class="included-list" id="notincluded-items"></ul></div>
-    </div>
-  </div>
-
-  <script src="js/nav.js"></script>
+  <script src="js/navigation.js"></script>
   <script src="js/explore.js"></script>
 </body>
 </html>

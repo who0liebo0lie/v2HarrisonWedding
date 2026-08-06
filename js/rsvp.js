@@ -1,96 +1,111 @@
-document.addEventListener('DOMContentLoaded', function () {
-  var countSelect = document.getElementById('guest-count');
-  var stack = document.getElementById('guest-stack');
-  var template = document.getElementById('guest-template');
-  var form = document.getElementById('rsvp-form');
-  var status = document.getElementById('rsvp-status');
+const RSVP_CONFIG = {
+  endpoint: "YOUR_GOOGLE_APPS_SCRIPT_OR_FORMSPREE_URL_HERE",
+  demoMode: true
+};
 
-  function buildGuestCards(count) {
-    stack.innerHTML = '';
-    for (var i = 1; i <= count; i++) {
-      var node = template.content.cloneNode(true);
-      var card = node.querySelector('.guest-card');
-      var idx = node.querySelector('.guest-index');
-      var nameInput = node.querySelector('.guest-name-input');
-      var nameDisplay = node.querySelector('.guest-name-display');
+document.addEventListener('DOMContentLoaded', () => {
+  const countSelect = document.getElementById('guest-count-select');
+  const container = document.getElementById('dynamic-guests-container');
+  const rsvpForm = document.getElementById('rsvp-form');
 
-      idx.textContent = 'Guest ' + i + ':';
+  if (countSelect) {
+    countSelect.addEventListener('change', (e) => {
+      renderGuestFields(parseInt(e.target.value, 10));
+    });
+    renderGuestFields(1);
+  }
 
-      /* namespace radio groups per guest so each set behaves independently */
-      ['overall-yes', 'overall-no'].forEach(function (cls) {
-        var el = node.querySelector('.' + cls);
-        if (el) el.name = 'overall-' + i;
-      });
-      ['wp-yes', 'wp-no'].forEach(function (cls) {
-        var el = node.querySelector('.' + cls);
-        if (el) el.name = 'wp-' + i;
-      });
-      ['bingo-yes', 'bingo-no'].forEach(function (cls) {
-        var el = node.querySelector('.' + cls);
-        if (el) el.name = 'bingo-' + i;
-      });
-      ['pb-yes', 'pb-no'].forEach(function (cls) {
-        var el = node.querySelector('.' + cls);
-        if (el) el.name = 'pb-' + i;
-      });
-      ['wed-yes', 'wed-no'].forEach(function (cls) {
-        var el = node.querySelector('.' + cls);
-        if (el) el.name = 'wed-' + i;
-      });
+  function renderGuestFields(count) {
+    if (!container) return;
+    container.innerHTML = '';
+    for (let i = 1; i <= count; i++) {
+      const card = document.createElement('div');
+      card.className = 'card guest-rsvp-card';
+      card.innerHTML = `
+        <h3 class="guest-card-title">Guest ${i}</h3>
+        <div class="form-group">
+          <label for="guest-name-${i}">Full Name</label>
+          <input type="text" id="guest-name-${i}" class="form-control guest-name-input" placeholder="Enter guest's full name" required>
+        </div>
+        <div class="events-grid">
+          <div class="event-option">
+            <label>Welcome Party</label>
+            <select class="form-control event-attending" data-event="welcomeParty">
+              <option value="Yes">Yes, I'm in!</option>
+              <option value="No">No, can't make it</option>
+            </select>
+          </div>
+          <div class="event-option">
+            <label>Bingo Game</label>
+            <select class="form-control event-bingo" data-event="bingo" onchange="toggleBingoFact(this, ${i})">
+              <option value="Yes">Yes, I'm in!</option>
+              <option value="No">No, can't make it</option>
+            </select>
+          </div>
+          <div class="event-option">
+            <label>Pickleball</label>
+            <select class="form-control event-attending" data-event="pickleball">
+              <option value="Yes">Yes, I'm in!</option>
+              <option value="No">No, can't make it</option>
+            </select>
+          </div>
+          <div class="event-option">
+            <label>Wedding Ceremony</label>
+            <select class="form-control event-attending" data-event="wedding">
+              <option value="Yes">Yes, I'm in!</option>
+              <option value="No">No, can't make it</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group bingo-fact-group" id="bingo-fact-group-${i}">
+          <label for="bingo-fact-${i}">Your Bingo Clue / Fun Fact</label>
+          <input type="text" id="bingo-fact-${i}" class="form-control bingo-fact-input" placeholder="Share one surprising or fun fact about yourself">
+          <small class="form-hint">This clue may appear anonymously on a personalized Bingo board!</small>
+        </div>
+      `;
+      container.appendChild(card);
 
-      nameInput.addEventListener('input', function () {
-        nameDisplay.textContent = nameInput.value || 'Guest';
+      const nameInput = card.querySelector(`#guest-name-${i}`);
+      const title = card.querySelector('.guest-card-title');
+      nameInput.addEventListener('input', (e) => {
+        title.textContent = e.target.value.trim() || `Guest ${i}`;
       });
-
-      var bingoYes = node.querySelector('.bingo-yes');
-      var bingoClue = node.querySelector('.bingo-clue');
-      bingoYes.addEventListener('change', function () { bingoClue.hidden = false; });
-      node.querySelector('.bingo-no').addEventListener('change', function () { bingoClue.hidden = true; });
-
-      stack.appendChild(node);
     }
   }
 
-  countSelect.addEventListener('change', function () {
-    buildGuestCards(parseInt(countSelect.value, 10));
-  });
+  if (rsvpForm) {
+    rsvpForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const payload = {
+        householdId: "HH-" + Date.now(),
+        submittedAt: new Date().toISOString(),
+        guests: []
+      };
 
-  buildGuestCards(parseInt(countSelect.value, 10));
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    var guests = [];
-    document.querySelectorAll('.guest-card').forEach(function (card) {
-      var name = card.querySelector('.guest-name-input').value;
-      var bingoText = card.querySelector('.guest-bingo-text');
-      var bingoOptedIn = card.querySelector('.bingo-yes').checked;
-      guests.push({
-        name: name,
-        attending: card.querySelector('.overall-yes').checked,
-        welcomeParty: card.querySelector('.wp-yes').checked,
-        bingo: bingoOptedIn,
-        bingoFact: bingoOptedIn && bingoText ? bingoText.value : '',
-        pickleball: card.querySelector('.pb-yes').checked,
-        wedding: card.querySelector('.wed-yes').checked
+      const cards = container.querySelectorAll('.guest-rsvp-card');
+      cards.forEach((card, idx) => {
+        const index = idx + 1;
+        payload.guests.push({
+          fullName: card.querySelector(`#guest-name-${index}`).value,
+          welcomeParty: card.querySelector('[data-event="welcomeParty"]').value,
+          bingo: card.querySelector('.event-bingo').value,
+          bingoFact: card.querySelector(`#bingo-fact-${index}`).value || '',
+          pickleball: card.querySelector('[data-event="pickleball"]').value,
+          wedding: card.querySelector('[data-event="wedding"]').value
+        });
       });
+
+      if (RSVP_CONFIG.demoMode) {
+        localStorage.setItem('demo_rsvp_submission', JSON.stringify(payload));
+        alert('RSVP Submitted Successfully (Demo Mode)! Responses saved locally.');
+      }
     });
-
-    var payload = {
-      guests: guests,
-      note: document.getElementById('household-note').value,
-      submittedAt: new Date().toISOString()
-    };
-
-    /* Placeholder persistence: writes to localStorage for now. Wire this to your
-       live RSVP/invitation-tracking endpoint before launch, and forward any
-       bingoFact values into data/bingo-facts.json per BINGO-SETUP.md. */
-    var existing = JSON.parse(localStorage.getItem('rsvpResponses') || '[]');
-    existing.push(payload);
-    localStorage.setItem('rsvpResponses', JSON.stringify(existing));
-
-    status.hidden = false;
-    status.textContent = "Thank you! Your RSVP has been recorded on this device for now — we'll connect this to the live guest tracker before the site launches.";
-    form.reset();
-  });
+  }
 });
+
+function toggleBingoFact(selectElement, index) {
+  const group = document.getElementById(`bingo-fact-group-${index}`);
+  if (group) {
+    group.style.display = selectElement.value === 'Yes' ? 'block' : 'none';
+  }
+}
