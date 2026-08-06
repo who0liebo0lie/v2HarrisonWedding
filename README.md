@@ -1,3 +1,3 @@
-# Julia & Wesley Wedding Website
+# Julia & Wesley Wedding Website — v35
 
-This build is ready for GitHub Pages. The RSVP and pickleball forms are fully interactive. To activate online collection, add deployed endpoint URLs in `js/config.js`. See `BACKEND-SETUP.md`.
+This package contains version 35 of the GitHub Pages website. Upload the contents of this folder to the root of the `v2HarrisonWedding` repository.
