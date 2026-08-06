@@ -1,9 +1,14 @@
-# Julia & Wesley’s Wedding Website
+# Harrison Set Sail — Editable Wedding Website
 
-A responsive, interactive wedding website designed for **Julia & Wesley's Wedding Cruise** aboard Royal Caribbean's *Harmony of the Seas*.
+Open `index.html` to start at the guest-name screen. All page content is editable HTML. Shared styling is in `assets/css/styles.css`; interactions are in `assets/js/`.
 
-## 🚀 GitHub Pages Deployment
-1. Download or clone this repository.
-2. Upload all files directly to the root branch (`main` or `gh-pages`) of your GitHub repository.
-3. Enable GitHub Pages under Repository Settings -> Pages.
-4. Your site will immediately be live! No build scripts (`npm run build`) or node servers required.
+## Publish on GitHub Pages
+1. Unzip the package.
+2. Upload the contents of the folder—not the outer folder—to the repository root.
+3. In GitHub: Settings → Pages → Deploy from branch → main / root.
+4. Wait for the Pages link to appear.
+
+## Important production items
+- Replace placeholder travel prices and contact links in `travel.html`.
+- Connect RSVP saves to a database or Google Apps Script before public launch. The current prototype uses browser localStorage.
+- See `data/README.md` for the Bingo/Pickleball population plan.

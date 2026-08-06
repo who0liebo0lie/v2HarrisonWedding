@@ -1,54 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RSVP | Julia & Wesley</title>
-  <link rel="stylesheet" href="css/site.css">
-  <link rel="stylesheet" href="css/responsive.css">
-  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;600;700&family=Libre+Franklin:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header class="site-header">
-    <a href="index.html" class="header-logo">HARRISON <span>Set Sail</span> ⚓</a>
-    <button class="nav-toggle" aria-label="Toggle Navigation">☰</button>
-    <nav>
-      <ul class="nav-menu">
-        <li><a href="our-story.html">OUR STORY</a></li>
-        <li><a href="adventure.html">THE ADVENTURE</a></li>
-        <li><a href="explore.html">EXPLORE THE SHIP</a></li>
-        <li><a href="travel.html">TRAVEL INFO</a></li>
-        <li><a href="rsvp.html" class="active">RSVP</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main class="container">
-    <div class="text-center" style="margin-bottom:2rem;">
-      <h1>Will You Set Sail With Us?</h1>
-      <p class="script-accent">Please respond by September 15, 2026</p>
-    </div>
-
-    <form id="rsvp-form" class="card" style="max-width:800px; margin:0 auto;">
-      <div class="form-group">
-        <label for="guest-count-select">How many guests are you responding for?</label>
-        <select id="guest-count-select" class="form-control">
-          <option value="1">1 Guest</option>
-          <option value="2">2 Guests</option>
-          <option value="3">3 Guests</option>
-          <option value="4">4 Guests</option>
-        </select>
-      </div>
-
-      <div id="dynamic-guests-container"></div>
-
-      <div class="text-center" style="margin-top:2rem;">
-        <button type="submit" class="btn-primary">SUBMIT MY RSVP</button>
-      </div>
-    </form>
-  </main>
-
-  <script src="js/navigation.js"></script>
-  <script src="js/rsvp.js"></script>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RSVP</title><link rel="stylesheet" href="assets/css/styles.css"></head><body>
+<header class="site-header"><div class="container nav-wrap"><a class="brand" href="home.html"><strong>HARRISON</strong><span>Set Sail</span></a><button class="menu-btn" aria-label="Open menu">☰</button><nav class="nav"><a href="story.html">OUR STORY</a><a href="adventure.html">THE ADVENTURE</a><a href="explore.html">EXPLORE THE SHIP</a><a href="travel.html">TRAVEL INFO</a><a href="rsvp.html">RSVP</a></nav></div></header>
+<main><section class="page-hero"><div class="container"><h1>Will you set sail with us?</h1><div class="script">We can’t wait to celebrate with you!</div><p>Please respond by September 15, 2026.</p></div></section><section class="section"><div class="container"><form id="rsvpForm" class="rsvp-form"><div class="card panel"><div class="field"><label>How many guests are you responding for?</label><select id="guestCount"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div></div><div id="guestWrap"></div><div class="card panel"><div class="field"><label>Anything else you’d like us to know? (Optional)</label><textarea name="notes" rows="4"></textarea></div></div><p class="note">Guest-list activity will be tracked, including invitation opens and submitted RSVP responses. Bingo fun facts will be used only to create the virtual game experience.</p><div style="text-align:center;margin-top:24px"><button class="btn">⚓ Submit My RSVP</button></div></form><div id="thanks" class="success hidden"><h2 class="serif">Your RSVP has been saved.</h2><p>Thank you—we’re so excited to celebrate with you!</p></div></div></section></main>
+<footer><div class="container"><div class="footer-script">Good vibes. Great people. Unforgettable memories.</div><div>⚓ Julia & Wesley • January 23–28, 2027</div></div></footer><script src="assets/js/site.js"></script>
+<script src="assets/js/rsvp.js"></script></body></html>
