@@ -1,1 +1,82 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Explore the Ship | Harrison Set Sail</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@500;600;700&family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/site.css"><link rel="stylesheet" href="css/responsive.css"></head><body class=""><header class="site-header"><a class="brand" href="index.html"><span>HARRISON</span><em>Set Sail</em><b>⚓</b></a><button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button><nav class="main-nav" aria-label="Primary"><a href="our-story.html">OUR STORY</a><a href="adventure.html">THE ADVENTURE</a><a href="explore.html">EXPLORE THE SHIP</a><a href="travel.html">TRAVEL INFO</a><a href="rsvp.html">RSVP</a></nav></header><main><section class="page-hero"><h1>Explore the Ship</h1><p>Tap a neighborhood to update the guide below. Open a category directory for the whole picture.</p></section><section class="section"><div class="container"><div class="ship-map"><div class="ship-shape" aria-label="Stylized Harmony of the Seas"></div></div><div id="ship-controls" class="ship-controls"></div><div class="tabs" id="category-tabs"></div><section class="card info-card" style="margin-top:20px"><div class="grid two"><div><p class="eyebrow">Neighborhood Guide</p><h2 id="guide-title"></h2><p id="guide-desc"></p></div><div id="guide-image" class="room-art" style="height:260px"></div></div><div id="guide-highlights" class="venue-grid" style="margin-top:20px"></div></section></div></section></main><div id="directory-backdrop" class="modal-backdrop" aria-hidden="true"><div class="modal" role="dialog" aria-modal="true"><button class="modal-close" aria-label="Close">×</button><h2 id="modal-title"></h2><div class="tabs" id="modal-filters"></div><div id="modal-body" class="venue-grid"></div></div></div><script src="js/navigation.js"></script><script src="js/explore.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Explore the Ship | Harrison Set Sail</title>
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <header class="site-header" aria-label="Primary">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-stack"><span class="brand-title">Harrison</span><span class="brand-script">Set Sail</span></span>
+        <span class="brand-anchor">⚓</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="our-story.html">Our Story</a>
+        <a href="adventure.html">The Adventure</a>
+        <a class="active" href="explore.html">Explore the Ship</a>
+        <a href="travel.html">Travel Info</a>
+        <a href="rsvp.html">RSVP</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <h1 class="title">Explore <span class="accent">the Ship</span></h1>
+    <p class="center" style="color:var(--ink-soft);max-width:560px;margin:0 auto 24px;">Tap a neighborhood on Harmony of the Seas to update the guide below, or open a category tile for the full directory.</p>
+
+    <section class="ship-zone">
+      <p class="center" style="color:var(--ink-soft);font-size:.9rem;">Tap a neighborhood on the ship to explore</p>
+      <div class="ship-map-wrap">
+        <img src="assets/approved/ship-map-crop.jpg" alt="Aerial ship map of Harmony of the Seas">
+        <button class="neighborhood-btn" style="left:12%;top:20%;" data-neighborhood="pool">Pool Deck</button>
+        <button class="neighborhood-btn active" style="left:35%;top:14%;" data-neighborhood="central">Central Park</button>
+        <button class="neighborhood-btn" style="left:58%;top:16%;" data-neighborhood="entertainment">Entertainment Place</button>
+        <button class="neighborhood-btn" style="left:82%;top:30%;" data-neighborhood="spa">Vitality Spa</button>
+        <button class="neighborhood-btn" style="left:18%;top:78%;" data-neighborhood="boardwalk">Boardwalk</button>
+        <button class="neighborhood-btn" style="left:40%;top:82%;" data-neighborhood="promenade">Royal Promenade</button>
+        <button class="neighborhood-btn" style="left:62%;top:78%;" data-neighborhood="youth">Youth Zone</button>
+      </div>
+    </section>
+
+    <section class="category-row" aria-label="Explore categories">
+      <button class="category-tile" data-category="dining">🍽️ Dining</button>
+      <button class="category-tile" data-category="entertainment">🎭 Entertainment</button>
+      <button class="category-tile" data-category="drinks">🍸 Drinks</button>
+      <button class="category-tile" data-category="relaxation">🪷 Relaxation</button>
+      <button class="category-tile" data-category="evenings">🌙 Evenings</button>
+      <button class="category-tile" data-category="explore">🧭 Explore</button>
+    </section>
+
+    <section class="guide-grid" aria-live="polite">
+      <div>
+        <p style="text-transform:uppercase;letter-spacing:.15em;font-size:.8rem;color:var(--olive);margin:0;">Neighborhood guide</p>
+        <h2 id="guide-title" style="font-family:var(--font-display);font-size:2rem;margin:4px 0 10px;color:var(--bougainvillea);">Central Park</h2>
+        <p id="guide-desc" style="color:var(--ink-soft);"></p>
+        <div class="highlight-tiles" id="guide-tiles"></div>
+      </div>
+      <img class="guide-main-photo" id="guide-image" src="assets/neighborhoods/central-park.jpg" alt="Central Park on Harmony of the Seas">
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="category-backdrop" aria-hidden="true">
+    <div class="category-modal" id="category-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" type="button" id="modal-close" aria-label="Close">×</button>
+      <h2 id="modal-title" style="font-family:var(--font-display);color:var(--bougainvillea);"></h2>
+      <p id="modal-intro" style="color:var(--ink-soft);"></p>
+      <div class="modal-tabs">
+        <button class="modal-tab-btn active" data-tab="included">What's Included</button>
+        <button class="modal-tab-btn" data-tab="notincluded">What's Not Included</button>
+      </div>
+      <div class="modal-tab-panel active" id="tab-included"><ul class="included-list" id="included-items"></ul></div>
+      <div class="modal-tab-panel" id="tab-notincluded"><ul class="included-list" id="notincluded-items"></ul></div>
+    </div>
+  </div>
+
+  <script src="js/nav.js"></script>
+  <script src="js/explore.js"></script>
+</body>
+</html>

@@ -1,1 +1,130 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>RSVP | Harrison Set Sail</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@500;600;700&family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/site.css"><link rel="stylesheet" href="css/responsive.css"></head><body class=""><header class="site-header"><a class="brand" href="index.html"><span>HARRISON</span><em>Set Sail</em><b>⚓</b></a><button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button><nav class="main-nav" aria-label="Primary"><a href="our-story.html">OUR STORY</a><a href="adventure.html">THE ADVENTURE</a><a href="explore.html">EXPLORE THE SHIP</a><a href="travel.html">TRAVEL INFO</a><a href="rsvp.html">RSVP</a></nav></header><main><section class="page-hero"><h1>Will you set sail with us?</h1><p>Please respond by <strong>September 15, 2026</strong></p><p class="script" style="font-size:2.5rem">We can’t wait to celebrate with you!</p></section><section class="section"><div class="container card form-card"><form id="rsvp-form"><div class="field"><label>How many guests are you responding for?<select id="guest-count" name="guestCount"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></label></div><div id="guest-stack"></div><div class="field"><label>Anything else you’d like us to know?<textarea name="householdNote"></textarea></label></div><button class="btn" type="submit">Submit My RSVP</button><p class="subtle">Your personalized invitation link helps us confirm that the invitation reached the correct guest or household, manage attendance, and connect your RSVP responses with wedding activities. Bingo facts and Pickleball registration information may be used to populate those event pages. The guest list and invitation opens will be tracked transparently for wedding planning.</p><div id="rsvp-status" class="status" hidden></div></form></div></section></main><template id="guest-template"><section class="guest-card card"><h2 class="guest-heading">Guest</h2><div class="field"><label>Full name<input class="guest-name" required></label></div><div class="field"><label>Overall attendance<select class="overall"><option value="">Choose</option><option value="attending">Attending</option><option value="not-attending">Not attending</option></select></label></div><div class="grid four events"></div><div class="field bingo-fact" hidden><label>Bingo fun fact<textarea class="fact" placeholder="Share one surprising or fun fact."></textarea></label><small>This may appear anonymously on a personalized Bingo board.</small></div></section></template><script src="js/navigation.js"></script><script src="js/rsvp.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RSVP | Harrison Set Sail</title>
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <header class="site-header" aria-label="Primary">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-stack"><span class="brand-title">Harrison</span><span class="brand-script">Set Sail</span></span>
+        <span class="brand-anchor">⚓</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="our-story.html">Our Story</a>
+        <a href="adventure.html">The Adventure</a>
+        <a href="explore.html">Explore the Ship</a>
+        <a href="travel.html">Travel Info</a>
+        <a class="active" href="rsvp.html">RSVP</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content floral-frame">
+    <img class="floral-corner tl" src="assets/hero_left_floral.png" alt="">
+    <img class="floral-corner br" src="assets/hero_right_floral.png" alt="">
+    <section class="panel">
+      <p class="subtitle">Will you set sail with us?</p>
+      <h1 class="title" style="font-size:2.2rem;">RSVP</h1>
+      <p class="center">Please respond by <strong>September 15, 2026</strong></p>
+      <p class="center" style="color:var(--ink-soft);">We can't wait to celebrate with you!</p>
+
+      <form id="rsvp-form">
+        <div class="field" style="max-width:260px;margin:22px auto;">
+          <label for="guest-count">How many guests are you responding for?</label>
+          <select id="guest-count">
+            <option value="1">1</option>
+            <option value="2" selected>2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+        </div>
+
+        <div class="guest-stack" id="guest-stack"></div>
+
+        <div class="info-card" style="margin:24px 0;">
+          <h3>Your presence is the present</h3>
+          <p>Celebrating with you is more than enough, and no gift is expected. For anyone who would still like to contribute, gifts may be sent by Zelle to <strong>"HarrisonSetSail"</strong>. Please include your name in the memo.</p>
+        </div>
+
+        <div class="field">
+          <label for="household-note">Anything you'd like us to know? (Optional)</label>
+          <textarea id="household-note" rows="3" placeholder="Questions, celebrations, or anything helpful for us to know."></textarea>
+        </div>
+
+        <div style="text-align:center;margin-top:24px;">
+          <button class="btn" type="submit">Submit my RSVP</button>
+          <p class="privacy-note" style="max-width:520px;margin:14px auto 0;">
+            Your response is tied to your name and household so we can track who's coming to which events — this helps us plan headcounts for Bingo, Pickleball, and the wedding itself, and confirm invitation delivery. Personalized links are used only to manage RSVP status, not shared outside the wedding planning process.
+          </p>
+        </div>
+        <div class="status-box" id="rsvp-status" hidden></div>
+      </form>
+    </section>
+  </main>
+
+  <template id="guest-template">
+    <div class="guest-card">
+      <h3><span class="guest-index"></span> <span class="guest-name-display">Guest</span></h3>
+      <div class="field">
+        <label>Full name</label>
+        <input type="text" class="guest-name-input" placeholder="Full name">
+      </div>
+      <div class="field">
+        <label>Overall attendance</label>
+        <div class="choice-row">
+          <label><input type="radio" name="" class="overall-yes" value="yes"><span class="choice-chip">Attending</span></label>
+          <label><input type="radio" name="" class="overall-no" value="no" checked><span class="choice-chip">Not attending</span></label>
+        </div>
+      </div>
+      <div class="field">
+        <label>Please RSVP to each event</label>
+        <div class="event-grid">
+          <div>
+            <p style="font-size:.85rem;font-weight:600;margin:0 0 4px;">Welcome Party</p>
+            <div class="choice-row">
+              <label><input type="radio" name="" class="wp-yes" value="yes"><span class="choice-chip">Yes</span></label>
+              <label><input type="radio" name="" class="wp-no" value="no" checked><span class="choice-chip">No</span></label>
+            </div>
+          </div>
+          <div>
+            <p style="font-size:.85rem;font-weight:600;margin:0 0 4px;">Bingo</p>
+            <div class="choice-row">
+              <label><input type="radio" name="" class="bingo-yes" value="yes"><span class="choice-chip">Yes</span></label>
+              <label><input type="radio" name="" class="bingo-no" value="no" checked><span class="choice-chip">No</span></label>
+            </div>
+          </div>
+          <div>
+            <p style="font-size:.85rem;font-weight:600;margin:0 0 4px;">Pickleball</p>
+            <div class="choice-row">
+              <label><input type="radio" name="" class="pb-yes" value="yes"><span class="choice-chip">Yes</span></label>
+              <label><input type="radio" name="" class="pb-no" value="no" checked><span class="choice-chip">No</span></label>
+            </div>
+          </div>
+          <div>
+            <p style="font-size:.85rem;font-weight:600;margin:0 0 4px;">Wedding</p>
+            <div class="choice-row">
+              <label><input type="radio" name="" class="wed-yes" value="yes"><span class="choice-chip">Yes</span></label>
+              <label><input type="radio" name="" class="wed-no" value="no" checked><span class="choice-chip">No</span></label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="field bingo-clue" hidden>
+        <label>Your Bingo fun fact</label>
+        <p style="font-size:.82rem;color:var(--ink-soft);margin:0 0 8px;">Share one surprising or funny fact about yourself — this will be pulled into the Bingo board at random once the game goes live.</p>
+        <textarea class="guest-bingo-text" rows="2" placeholder="e.g. I once sang karaoke with a cruise ship captain in the Bahamas!"></textarea>
+      </div>
+    </div>
+  </template>
+
+  <script src="js/nav.js"></script>
+  <script src="js/rsvp.js"></script>
+</body>
+</html>

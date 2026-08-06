@@ -1,1 +1,80 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bingo | Harrison Set Sail</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@500;600;700&family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/site.css"><link rel="stylesheet" href="css/responsive.css"></head><body class=""><header class="site-header"><a class="brand" href="index.html"><span>HARRISON</span><em>Set Sail</em><b>⚓</b></a><button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button><nav class="main-nav" aria-label="Primary"><a href="our-story.html">OUR STORY</a><a href="adventure.html">THE ADVENTURE</a><a href="explore.html">EXPLORE THE SHIP</a><a href="travel.html">TRAVEL INFO</a><a href="rsvp.html">RSVP</a></nav></header><main><section class="page-hero"><h1>BINGO</h1><p class="script" style="font-size:2.4rem">Get to know. Laugh a lot. Win big.</p><a href="adventure.html">← Back to The Adventure</a></section><section class="section"><div class="container"><h2 class="section-title">How It Works</h2><div class="grid five steps"><div class="card step"><h3>RSVP</h3><p>RSVP to the cruise.</p></div><div class="card step"><h3>Share a Fun Fact</h3><p>Everyone submits one fact.</p></div><div class="card step"><h3>Your Bingo Card</h3><p>Receive a personalized board.</p></div><div class="card step"><h3>The Game Begins</h3><p>The game goes live at sea.</p></div><div class="card step"><h3>Match, Connect, Win</h3><p>Find the right guests and climb the leaderboard.</p></div></div></div></section><section class="section"><div class="container"><h2 class="section-title">Your Bingo Adventure</h2><div class="grid three"><div class="card info-card"><h3>Your Bingo Card</h3><div id="bingo-grid" class="grid five"></div></div><div class="card info-card"><h3>How to Play</h3><ol><li>Tap a square.</li><li>Search and guess.</li><li>Find out right away.</li><li>Earn points.</li></ol></div><div class="card info-card"><h3>Leaderboard</h3><ol id="leaderboard"></ol></div></div></div></section><section class="section"><div class="container"><h2 class="section-title">Today’s Mystery Guests</h2><div id="mystery" class="grid five"></div></div></section><section class="section"><div class="container"><h2 class="section-title">Detective Tips & Hall of Fame</h2><div class="grid two"><div class="card info-card"><ul><li>Ask questions.</li><li>Introduce yourself and listen.</li><li>Do not reveal your own fact.</li><li>Meet someone new every day.</li></ul></div><div class="card info-card"><h3>Final recognitions after the cruise</h3><p>Top Detective · Most Correct Matches · Most Interesting Fact · Most Unexpected Fact</p></div></div></div></section><section class="section"><div class="container"><h2 class="section-title">FAQ</h2><div class="grid two"><div class="faq"><button>When does the game start?</button><div class="faq-answer">After the cruise begins.</div></div><div class="faq"><button>How do I submit my fact?</button><div class="faq-answer">Through the RSVP form.</div></div><div class="faq"><button>Can I change my answer?</button><div class="faq-answer">Contact Julia or Wesley before boards are finalized.</div></div><div class="faq"><button>How are points calculated?</button><div class="faq-answer">Correct matches earn points.</div></div></div></div></section></main><script src="js/navigation.js"></script><script src="js/bingo.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bingo | Harrison Set Sail</title>
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <header class="site-header" aria-label="Primary">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-stack"><span class="brand-title">Harrison</span><span class="brand-script">Set Sail</span></span>
+        <span class="brand-anchor">⚓</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="our-story.html">Our Story</a>
+        <a class="active" href="adventure.html">The Adventure</a>
+        <a href="explore.html">Explore the Ship</a>
+        <a href="travel.html">Travel Info</a>
+        <a href="rsvp.html">RSVP</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-content">
+    <section class="panel">
+      <p class="center" style="letter-spacing:.2em;text-transform:uppercase;color:var(--olive);font-size:.85rem;">Virtual game</p>
+      <h1 class="title">B I N G O</h1>
+      <p class="subtitle">Get to know. Laugh a lot. Win big.</p>
+      <p class="center" style="max-width:520px;margin:0 auto 26px;color:var(--ink-soft);">Meet new people. Learn amazing things. See if you can match every story to the right guest!</p>
+
+      <div class="data-note">
+        <strong>How this page gets populated:</strong> guests submit a fun fact when they RSVP and opt in to Bingo (see the RSVP page). Those facts are collected in <code>data/bingo-facts.json</code> — Julia builds the live bingo card by copying facts from that file (or the linked spreadsheet, if you prefer to manage it there) into the card grid below before the cruise sets sail. Full steps are in <code>BINGO-SETUP.md</code>.
+      </div>
+
+      <h2 style="font-family:var(--font-display);color:var(--bougainvillea);">How it works</h2>
+      <div class="card-grid">
+        <div class="info-card"><h3>1. RSVP</h3><p>RSVP to the cruise and opt in to Bingo — you're in!</p></div>
+        <div class="info-card"><h3>2. Share a fun fact</h3><p>Everyone submits one surprising or funny fact about themselves.</p></div>
+        <div class="info-card"><h3>3. Your bingo card</h3><p>As facts come in, you'll get your very own digital bingo card.</p></div>
+        <div class="info-card"><h3>4. The game begins</h3><p>Once we set sail, the game goes live.</p></div>
+        <div class="info-card"><h3>5. Match, connect, win</h3><p>Match facts to the right people, climb the leaderboard, and earn bragging rights.</p></div>
+      </div>
+
+      <h2 style="font-family:var(--font-display);color:var(--bougainvillea);">Your bingo card</h2>
+      <p style="color:var(--ink-soft);">Match each fact to the right person. The card below fills in automatically once guest facts are collected — this is a placeholder layout.</p>
+      <table style="width:100%;border-collapse:collapse;margin:16px 0;">
+        <tr>
+          <td style="border:1px solid var(--border);padding:14px;text-align:center;">Has climbed a mountain</td>
+          <td style="border:1px solid var(--border);padding:14px;text-align:center;">Loves karaoke</td>
+          <td style="border:1px solid var(--border);padding:14px;text-align:center;">Speaks 3+ languages</td>
+          <td style="border:1px solid var(--border);padding:14px;text-align:center;">Has been on safari</td>
+          <td style="border:1px solid var(--border);padding:14px;text-align:center;">Plays an instrument</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid var(--border);padding:14px;text-align:center;">Is celebrating a birthday</td>
+          <td style="border:1px solid var(--border);padding:14px;text-align:center;">Has known Julia &amp; Wesley 20+ years</td>
+          <td style="border:1px solid var(--border);padding:14px;text-align:center;">Owns a dog</td>
+          <td style="border:1px solid var(--border);padding:14px;text-align:center;">Has traveled to Antarctica</td>
+          <td style="border:1px solid var(--border);padding:14px;text-align:center;">Loves spicy food</td>
+        </tr>
+        <tr>
+          <td style="border:1px solid var(--border);padding:14px;text-align:center;">Has gone skydiving</td>
+          <td style="border:1px solid var(--border);padding:14px;text-align:center;">Is a morning person</td>
+          <td style="border:1px solid var(--border);padding:14px;text-align:center;background:var(--linen-dark);font-weight:700;">FREE SPACE</td>
+          <td style="border:1px solid var(--border);padding:14px;text-align:center;">Collects something unique</td>
+          <td style="border:1px solid var(--border);padding:14px;text-align:center;">Has run a marathon</td>
+        </tr>
+      </table>
+
+      <h2 style="font-family:var(--font-display);color:var(--bougainvillea);">Leaderboard</h2>
+      <p style="color:var(--ink-soft);">Standings go live once the game begins — check back during the cruise!</p>
+    </section>
+  </main>
+
+  <script src="js/nav.js"></script>
+</body>
+</html>

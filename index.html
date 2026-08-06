@@ -1,1 +1,79 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Julia & Wesley | Harrison Set Sail</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@500;600;700&family=Libre+Franklin:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/site.css"><link rel="stylesheet" href="css/responsive.css"></head><body class="home-page"><header class="site-header"><a class="brand" href="index.html"><span>HARRISON</span><em>Set Sail</em><b>⚓</b></a><button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button><nav class="main-nav" aria-label="Primary"><a href="our-story.html">OUR STORY</a><a href="adventure.html">THE ADVENTURE</a><a href="explore.html">EXPLORE THE SHIP</a><a href="travel.html">TRAVEL INFO</a><a href="rsvp.html">RSVP</a></nav></header><section class="welcome-gate" id="welcome-gate"><div class="welcome-card"><button id="welcome-close" class="welcome-close" aria-label="Close">×</button><h1 class="section-title">Welcome to Julia & Wesley’s <span class="script">Wedding Adventure</span></h1><p>We’re so excited to share all the details for our wedding adventure, including answering all your questions along the way.</p><h2>Yes!! You’re invited.</h2><div class="welcome-grid"><div class="portrait" aria-label="Wesley portrait placeholder"></div><form id="welcome-form"><div class="field"><label>First name<input name="firstName" required autocomplete="given-name"></label></div><div class="field"><label>Last name<input name="lastName" required autocomplete="family-name"></label></div><button class="btn" type="submit">⚓ THAT’S ME!</button><p class="script" style="font-size:2rem">We’re so excited that you’re here!</p></form><div class="portrait" aria-label="Julia portrait placeholder"></div></div></div></section><main><section class="home-hero"><div><p class="eyebrow">January 26, 2027 · Nassau, Bahamas</p><h1 class="display">A Love Story</h1><div class="script" style="font-size:clamp(3rem,7vw,6rem)">Twenty Years in the Making</div><div class="couple-art" aria-label="Julia and Wesley together"></div><p>WE CAN’T WAIT TO <span class="script" style="font-size:2.4rem">Set Sail</span> WITH YOU</p></div></section><section class="footer-icons"><div class="container grid five"><div><span class="icon">🗓️</span><strong>January 23–28, 2028</strong></div><div><span class="icon">🛳️</span><strong>Harmony of the Seas</strong></div><div><span class="icon">♡</span><strong>Wedding Day at Sea</strong></div><div><span class="icon">🌴</span><strong>Sunshine, Love & Adventure</strong></div><div><span class="icon">🍸</span><strong>A Celebration to Remember</strong></div></div></section></main><script src="js/navigation.js"></script><script src="js/access.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Julia &amp; Wesley | Harrison Set Sail</title>
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+  <section class="welcome-gate" id="welcome-gate" aria-labelledby="welcome-title">
+    <div class="welcome-card floral-frame">
+      <img class="floral-corner tl" src="assets/hero_left_floral.png" alt="">
+      <img class="floral-corner tr" src="assets/hero_right_floral.png" alt="">
+      <img class="floral-corner bl" src="assets/hero_left_floral.png" alt="">
+      <img class="floral-corner br" src="assets/hero_right_floral.png" alt="">
+      <button class="welcome-close" type="button" id="welcome-close" aria-label="Close">×</button>
+      <div class="welcome-main">
+        <p style="font-size:1.6rem;color:var(--bougainvillea);">⚓</p>
+        <h1 id="welcome-title" class="title">Welcome to Julia &amp; Wesley's<br><span class="subtitle" style="display:inline-block;">Wedding Adventure</span></h1>
+        <p style="max-width:520px;margin:0 auto;color:var(--ink-soft);">We're so excited to share all the details for our wedding adventure, including answering all your questions along the way.</p>
+        <p style="font-family:var(--font-display);font-weight:700;font-size:1.3rem;margin:14px 0;">YES — you're invited!</p>
+        <form class="welcome-form" id="welcome-form">
+          <div class="field">
+            <label for="first-name">First name</label>
+            <input id="first-name" name="firstName" autocomplete="given-name" required>
+          </div>
+          <div class="field">
+            <label for="last-name">Last name</label>
+            <input id="last-name" name="lastName" autocomplete="family-name" required>
+          </div>
+        </form>
+        <button class="btn" type="submit" form="welcome-form">That's me!</button>
+        <p class="welcome-error" id="welcome-error" aria-live="polite"></p>
+        <div class="welcome-footer">We're so excited that you're here!</div>
+      </div>
+    </div>
+  </section>
+
+  <header class="site-header" aria-label="Primary">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-stack"><span class="brand-title">Harrison</span><span class="brand-script">Set Sail</span></span>
+        <span class="brand-anchor">⚓</span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="our-story.html">Our Story</a>
+        <a href="adventure.html">The Adventure</a>
+        <a href="explore.html">Explore the Ship</a>
+        <a href="travel.html">Travel Info</a>
+        <a href="rsvp.html">RSVP</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="home-hero">
+    <div class="hero-copy">
+      <p class="eyebrow">January 26, 2027 · Nassau, Bahamas</p>
+      <h1>A Love Story<span>Twenty Years in the Making</span></h1>
+      <p style="font-family:var(--font-script);font-size:1.6rem;color:var(--marigold);">We can't wait to Set Sail with you</p>
+      <img class="couple-photo" src="assets/hero_couple.jpg" alt="Julia and Wesley">
+    </div>
+  </main>
+
+  <section class="home-footer">
+    <div class="container footer-grid">
+      <div class="footer-card"><span class="icon">🗓️</span><strong>January 23–28, 2027</strong></div>
+      <div class="footer-card"><span class="icon">🛳️</span><strong>Harmony of the Seas</strong></div>
+      <div class="footer-card"><span class="icon">♡</span><strong>Wedding Day at Sea</strong></div>
+      <div class="footer-card"><span class="icon">🌴</span><strong>Sunshine, Love &amp; Adventure</strong></div>
+      <div class="footer-card"><span class="icon">🍸</span><strong>A Celebration to Remember</strong></div>
+    </div>
+  </section>
+
+  <script src="js/nav.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

@@ -1,1 +1,96 @@
-const ENDPOINT='';const count=document.getElementById('guest-count'),stack=document.getElementById('guest-stack'),tpl=document.getElementById('guest-template');const eventNames=['Welcome Party','Bingo','Pickleball','Wedding'];function build(){const old=[...stack.querySelectorAll('.guest-card')].map(c=>({name:c.querySelector('.guest-name').value,fact:c.querySelector('.fact').value}));stack.innerHTML='';for(let i=0;i<+count.value;i++){const n=tpl.content.cloneNode(true);const card=n.querySelector('.guest-card');card.querySelector('.guest-heading').textContent=`Guest ${i+1}`;const name=card.querySelector('.guest-name');name.value=old[i]?.name||'';name.addEventListener('input',()=>card.querySelector('.guest-heading').textContent=name.value||`Guest ${i+1}`);const events=card.querySelector('.events');eventNames.forEach(ev=>{const id=`g${i}-${ev.replace(/\W/g,'')}`;events.insertAdjacentHTML('beforeend',`<div class="field"><label>${ev}<select data-event="${ev}"><option value="">Choose</option><option value="yes">Yes, I’m in!</option><option value="no">No, can’t make it</option></select></label></div>`)});const bingo=events.querySelector('[data-event="Bingo"]'),factWrap=card.querySelector('.bingo-fact'),fact=card.querySelector('.fact');fact.value=old[i]?.fact||'';bingo.addEventListener('change',()=>{factWrap.hidden=bingo.value!=='yes';fact.required=bingo.value==='yes'});stack.appendChild(n)}}count.addEventListener('change',build);build();const form=document.getElementById('rsvp-form'),status=document.getElementById('rsvp-status');form.addEventListener('submit',async e=>{e.preventDefault();const btn=form.querySelector('button[type=submit]');btn.disabled=true;const guests=[...stack.querySelectorAll('.guest-card')].map(c=>{const ev={};c.querySelectorAll('[data-event]').forEach(s=>ev[s.dataset.event]=s.value);return{fullName:c.querySelector('.guest-name').value,overallAttendance:c.querySelector('.overall').value,welcomeParty:ev['Welcome Party'],bingo:ev.Bingo,bingoFact:c.querySelector('.fact').value,pickleball:ev.Pickleball,wedding:ev.Wedding}});const payload={householdId:'',invitationToken:new URLSearchParams(location.search).get('invite')||'',submittedAt:new Date().toISOString(),guests,householdNote:form.householdNote.value};try{if(ENDPOINT){const r=await fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});if(!r.ok)throw new Error('Submission failed');status.textContent='Your RSVP was submitted successfully.'}else{localStorage.setItem('harrisonRsvpDraft',JSON.stringify(payload));status.textContent='Demonstration mode: your RSVP was saved only on this device. A live endpoint still needs to be connected.'}status.hidden=false}catch(err){localStorage.setItem('harrisonRsvpDraft',JSON.stringify(payload));status.textContent='We could not submit remotely. Your response was saved on this device so it is not lost.';status.hidden=false}finally{btn.disabled=false}});
+document.addEventListener('DOMContentLoaded', function () {
+  var countSelect = document.getElementById('guest-count');
+  var stack = document.getElementById('guest-stack');
+  var template = document.getElementById('guest-template');
+  var form = document.getElementById('rsvp-form');
+  var status = document.getElementById('rsvp-status');
+
+  function buildGuestCards(count) {
+    stack.innerHTML = '';
+    for (var i = 1; i <= count; i++) {
+      var node = template.content.cloneNode(true);
+      var card = node.querySelector('.guest-card');
+      var idx = node.querySelector('.guest-index');
+      var nameInput = node.querySelector('.guest-name-input');
+      var nameDisplay = node.querySelector('.guest-name-display');
+
+      idx.textContent = 'Guest ' + i + ':';
+
+      /* namespace radio groups per guest so each set behaves independently */
+      ['overall-yes', 'overall-no'].forEach(function (cls) {
+        var el = node.querySelector('.' + cls);
+        if (el) el.name = 'overall-' + i;
+      });
+      ['wp-yes', 'wp-no'].forEach(function (cls) {
+        var el = node.querySelector('.' + cls);
+        if (el) el.name = 'wp-' + i;
+      });
+      ['bingo-yes', 'bingo-no'].forEach(function (cls) {
+        var el = node.querySelector('.' + cls);
+        if (el) el.name = 'bingo-' + i;
+      });
+      ['pb-yes', 'pb-no'].forEach(function (cls) {
+        var el = node.querySelector('.' + cls);
+        if (el) el.name = 'pb-' + i;
+      });
+      ['wed-yes', 'wed-no'].forEach(function (cls) {
+        var el = node.querySelector('.' + cls);
+        if (el) el.name = 'wed-' + i;
+      });
+
+      nameInput.addEventListener('input', function () {
+        nameDisplay.textContent = nameInput.value || 'Guest';
+      });
+
+      var bingoYes = node.querySelector('.bingo-yes');
+      var bingoClue = node.querySelector('.bingo-clue');
+      bingoYes.addEventListener('change', function () { bingoClue.hidden = false; });
+      node.querySelector('.bingo-no').addEventListener('change', function () { bingoClue.hidden = true; });
+
+      stack.appendChild(node);
+    }
+  }
+
+  countSelect.addEventListener('change', function () {
+    buildGuestCards(parseInt(countSelect.value, 10));
+  });
+
+  buildGuestCards(parseInt(countSelect.value, 10));
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var guests = [];
+    document.querySelectorAll('.guest-card').forEach(function (card) {
+      var name = card.querySelector('.guest-name-input').value;
+      var bingoText = card.querySelector('.guest-bingo-text');
+      var bingoOptedIn = card.querySelector('.bingo-yes').checked;
+      guests.push({
+        name: name,
+        attending: card.querySelector('.overall-yes').checked,
+        welcomeParty: card.querySelector('.wp-yes').checked,
+        bingo: bingoOptedIn,
+        bingoFact: bingoOptedIn && bingoText ? bingoText.value : '',
+        pickleball: card.querySelector('.pb-yes').checked,
+        wedding: card.querySelector('.wed-yes').checked
+      });
+    });
+
+    var payload = {
+      guests: guests,
+      note: document.getElementById('household-note').value,
+      submittedAt: new Date().toISOString()
+    };
+
+    /* Placeholder persistence: writes to localStorage for now. Wire this to your
+       live RSVP/invitation-tracking endpoint before launch, and forward any
+       bingoFact values into data/bingo-facts.json per BINGO-SETUP.md. */
+    var existing = JSON.parse(localStorage.getItem('rsvpResponses') || '[]');
+    existing.push(payload);
+    localStorage.setItem('rsvpResponses', JSON.stringify(existing));
+
+    status.hidden = false;
+    status.textContent = "Thank you! Your RSVP has been recorded on this device for now — we'll connect this to the live guest tracker before the site launches.";
+    form.reset();
+  });
+});
