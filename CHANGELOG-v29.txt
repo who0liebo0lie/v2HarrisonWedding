@@ -1,0 +1,19 @@
+Julia & Wesley Wedding Website v29
+
+- Rebuilt all main layouts as native HTML/CSS/JavaScript rather than inserted page screenshots.
+- Added one unified navigation header to Home, Our Story, Adventure, Explore, Travel, and RSVP.
+- Rebuilt the welcome/name gate with floral-only framing and separate Wesley/Julia sides.
+- Rebalanced the home hero and shortened the five-item information footer.
+- Rebuilt the May 28 conversation with centered circular portraits and Russian-only reply bubble.
+- Rebuilt Adventure as route + native itinerary with in-context links to Bingo, Pickleball, CocoCay, and Wedding Day.
+- Rebuilt Bingo and Pickleball as functioning HTML pages. Pickleball accepts team or solo registration.
+- Rebuilt Explore with one set of neighborhood controls, a separate neighborhood guide, and full category modal directories.
+- Added distinct Solarium and Fitness Center visual assets instead of reusing pool/spa imagery.
+- Rebuilt Travel with extended ship/sky background, in-page contact links, and functional accordion FAQs.
+- Rebuilt RSVP with one header, continuous floral garlands, dynamic guest cards, per-event responses, and conditional Bingo clue fields.
+
+Placeholders still requiring final values:
+- Live RSVP and invitation-tracking endpoint
+- Final RSVP deadline
+- Final Aligned Journeys email, phone number, and booking URL
+- Negotiated room rates and final payment date
