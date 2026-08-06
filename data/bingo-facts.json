@@ -1,0 +1,177 @@
+[
+  {
+    "id": "fact-001",
+    "guestId": "guest-001",
+    "fact": "Has climbed Mt. Kilimanjaro",
+    "active": true,
+    "demo": true
+  },
+  {
+    "id": "fact-002",
+    "guestId": "guest-002",
+    "fact": "Loves karaoke",
+    "active": true,
+    "demo": true
+  },
+  {
+    "id": "fact-003",
+    "guestId": "guest-003",
+    "fact": "Speaks 3+ languages",
+    "active": true,
+    "demo": true
+  },
+  {
+    "id": "fact-004",
+    "guestId": "guest-004",
+    "fact": "Has been on a safari",
+    "active": true,
+    "demo": true
+  },
+  {
+    "id": "fact-005",
+    "guestId": "guest-005",
+    "fact": "Can play an instrument",
+    "active": true,
+    "demo": true
+  },
+  {
+    "id": "fact-006",
+    "guestId": "guest-006",
+    "fact": "Is celebrating a birthday",
+    "active": true,
+    "demo": true
+  },
+  {
+    "id": "fact-007",
+    "guestId": "guest-007",
+    "fact": "Has met Julia for over 20 years",
+    "active": true,
+    "demo": true
+  },
+  {
+    "id": "fact-008",
+    "guestId": "guest-008",
+    "fact": "Owns a dog",
+    "active": true,
+    "demo": true
+  },
+  {
+    "id": "fact-009",
+    "guestId": "guest-009",
+    "fact": "Has traveled to Antarctica",
+    "active": true,
+    "demo": true
+  },
+  {
+    "id": "fact-010",
+    "guestId": "guest-010",
+    "fact": "Loves spicy food",
+    "active": true,
+    "demo": true
+  },
+  {
+    "id": "fact-011",
+    "guestId": "guest-011",
+    "fact": "Has gone skydiving",
+    "active": true,
+    "demo": true
+  },
+  {
+    "id": "fact-012",
+    "guestId": "guest-012",
+    "fact": "Is a morning person",
+    "active": true,
+    "demo": true
+  },
+  {
+    "id": "fact-013",
+    "guestId": "guest-013",
+    "fact": "Collects something unique",
+    "active": true,
+    "demo": true
+  },
+  {
+    "id": "fact-014",
+    "guestId": "guest-014",
+    "fact": "Has run a marathon",
+    "active": true,
+    "demo": true
+  },
+  {
+    "id": "fact-015",
+    "guestId": "guest-015",
+    "fact": "Can quote The Office",
+    "active": true,
+    "demo": true
+  },
+  {
+    "id": "fact-016",
+    "guestId": "guest-016",
+    "fact": "Loves live music",
+    "active": true,
+    "demo": true
+  },
+  {
+    "id": "fact-017",
+    "guestId": "guest-017",
+    "fact": "Has over 100 photos on their phone",
+    "active": true,
+    "demo": true
+  },
+  {
+    "id": "fact-018",
+    "guestId": "guest-018",
+    "fact": "Has visited 30+ countries",
+    "active": true,
+    "demo": true
+  },
+  {
+    "id": "fact-019",
+    "guestId": "guest-019",
+    "fact": "Is the youngest in their family",
+    "active": true,
+    "demo": true
+  },
+  {
+    "id": "fact-020",
+    "guestId": "guest-020",
+    "fact": "Has a hidden talent",
+    "active": true,
+    "demo": true
+  },
+  {
+    "id": "fact-021",
+    "guestId": "guest-021",
+    "fact": "Has been in a wedding party",
+    "active": true,
+    "demo": true
+  },
+  {
+    "id": "fact-022",
+    "guestId": "guest-022",
+    "fact": "Knows how to salsa",
+    "active": true,
+    "demo": true
+  },
+  {
+    "id": "fact-023",
+    "guestId": "guest-023",
+    "fact": "Prefers mountains over beach",
+    "active": true,
+    "demo": true
+  },
+  {
+    "id": "fact-024",
+    "guestId": "guest-024",
+    "fact": "Loves board games",
+    "active": true,
+    "demo": true
+  },
+  {
+    "id": "fact-025",
+    "guestId": "guest-025",
+    "fact": "Can solve a Rubik\u2019s cube",
+    "active": true,
+    "demo": true
+  }
+]

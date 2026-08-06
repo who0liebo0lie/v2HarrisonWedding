@@ -1,0 +1,29 @@
+[
+  {
+    "id": "team-001",
+    "teamName": "Kitchen Nightmares",
+    "playerOne": "Demo Player A",
+    "playerTwo": "Demo Player B",
+    "needsPartner": false,
+    "status": "registered",
+    "demo": true
+  },
+  {
+    "id": "team-002",
+    "teamName": "The Dink Dynasty",
+    "playerOne": "Demo Player C",
+    "playerTwo": "Demo Player D",
+    "needsPartner": false,
+    "status": "registered",
+    "demo": true
+  },
+  {
+    "id": "team-003",
+    "teamName": "Pickled Pink",
+    "playerOne": "Demo Player E",
+    "playerTwo": "",
+    "needsPartner": true,
+    "status": "registered",
+    "demo": true
+  }
+]
