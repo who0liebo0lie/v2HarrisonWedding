@@ -1,1 +1,0 @@
-window.WEDDING_CONFIG={rsvpEndpoint:'',pickleballEndpoint:''};
